@@ -71,10 +71,13 @@
     <div class="container">
       <div class="team card center">
         <div class="row">
-          <div class="col s3">
+          <div class="col s12 l2">
+
+          </div>
+          <div class="col s12 l3">
               <img src="images/download.jpg" alt="developer image" class="circle responsive-img"> <!-- notice the "circle" class -->
             </div>
-            <div class="col s7">
+            <div class="col s12 l5">
               <h5>Sviluppatore e ideatore</h5>
               <p>Leonardo Drici</p>
               <p>Sviluppatore, Tester</p>
@@ -87,25 +90,25 @@
           <div class="col s12 center">
             <h4>Tecnologie principali utilizzate</h4>
           </div>
-          <div class="col s1">
+          <div class="col s12 l1">
 
           </div>
-          <div class="col s2">
+          <div class="col s12 l2">
               <img src="images/html.png" alt="" class="responsive-img">
           </div>
-          <div class="col s2">
+          <div class="col s12 l2">
             <img src="images/css.png" alt="" class="responsive-img">
           </div>
-          <div class="col s2">
+          <div class="col s12 l2">
             <img src="images/js.png" alt="" class="responsive-img">
           </div>
-          <div class="col s2">
+          <div class="col s12 l2">
             <img src="images/php.png" alt="" class="responsive-img">
           </div>
-          <div class="col s2">
+          <div class="col s12 l2">
             <img src="images/mysql.png" alt="" class="responsive-img">
           </div>
-          <div class="col s1">
+          <div class="col s12 l1">
 
           </div>
 

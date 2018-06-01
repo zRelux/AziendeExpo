@@ -87,9 +87,9 @@ nav .nav-wrapper {
   width: 100px;
   height: 100px;
   object-fit: fill;
-  margin:auto;
   border-radius: 50%;
 }
+
 
 .background-image {
   object-fit: cover;
