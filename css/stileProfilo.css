@@ -1,0 +1,145 @@
+nav ul a, nav .brand-logo, .sidenav-trigger{
+  color: #444;
+}
+
+img{
+  object-fit: cover;
+}
+
+.immagine {
+  position: absolute;
+  display: none;
+  z-index: 1;
+}
+
+.btn-upload {
+  position: absolute;
+  z-index: 1;
+  right: 10px;
+  bottom: 10px;
+}
+
+.nav-wrapper{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#profile-page {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#profile-page-content{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+[contenteditable]:focus {
+  outline: 0px solid transparent;
+}
+
+#profile-page-header .card-image {
+  height: 250px;
+}
+
+.btn-upload {
+  position: absolute;
+  z-index: 1;
+  right: 10px;
+  bottom: 10px;
+}
+
+.immagine {
+  position: absolute;
+  display: none;
+  z-index: 1;
+}
+
+nav ul a, nav .brand-logo {
+  color: #444;
+}
+
+.btn-profile {
+  bottom: 50px;
+}
+
+input[type=file] {
+  color: transparent;
+}
+
+.content {
+  padding-right: 10px;
+}
+
+.btn-close {
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  right: 10px
+}
+
+nav .nav-wrapper {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  object-fit: fill;
+  margin:auto;
+  border-radius: 50%;
+}
+
+.background-image {
+  object-fit: cover;
+}
+
+.index-background-image{
+  object-fit: fill;
+}
+
+@media only screen and (max-width: 1000px) {
+  .principale{
+    padding-right: 10.50px;
+    padding-left: 10.50px;
+  }
+}
+.collection {
+  overflow: visible;
+}
+
+.brand-logo{
+  position: absolute;
+  display: inline-block;
+  font-size: 2.1rem;
+}
+
+.image-logo{
+  margin-top: 8px;
+  margin-left: 80px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .image-logo{
+    margin-top: 2px;
+    margin-left: 0px;
+  }
+}
+
+#search{
+  color: #444;
+}
+
+nav .nav-wrapper form, nav .nav-wrapper form .input-field{
+
+}
+
+input[type="search"] {
+  color: #444;
+  height: 56px !important; /* or height of nav */
+}
+
+.prezzo{
+  margin-left: 10%;
+}
