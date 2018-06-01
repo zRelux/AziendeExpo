@@ -3,6 +3,8 @@
   include('res/sec.php');
   include('res/mailer.php');
   session_start();
+
+  //Ciao lucche
   if(isset($_POST['email']) && !empty($_POST['email'])){
     $db = $_SESSION['db'];
     $email = Encryption::encrypt($_POST['email']);
