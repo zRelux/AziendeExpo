@@ -116,19 +116,17 @@
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
               <li>
-                <li>
-                  <form id="ricercaAz" method="get" action="index.php">
-                    <div class="input-field">
-                      <i class="black-text material-icons prefix">search</i>
-                      <input id="ricercaAziende" type="text" placeholder="Cerca..." name="data" onkeydown="search(this)" ><!--onkeyup="ricerca()"-->
-                    </div>
-                  </form>
-                </li>
+                <form id="ricercaAz" method="get" action="index.php">
+                  <div class="input-field">
+                    <i class="black-text material-icons prefix">search</i>
+                    <input id="ricercaAziende" type="text" placeholder="Cerca..." name="data" onkeydown="search(this)" ><!--onkeyup="ricerca()"-->
+                  </div>
+                </form>
               </li>
               <li><a href="index.php">Home</a></li>
               <li><a href="contatti.php">Team</a></li>
               <li><a href="login.php" class="waves-effect waves-teal"><i class="material-icons">add_circle</i></a></li>
-              <li><a href="profile.php?find=true" class="dropdown-button profiledropdown waves-effect waves-teal" data-target='dropdownNav'><i class="medium material-icons">account_circle</i></a></li>
+              <li><a href="profile.php?find=true" class="dropdown-button waves-effect waves-teal" data-target='dropdownNav'><i class="medium material-icons">account_circle</i></a></li>
             </ul>
             <ul id='dropdownNav' class='dropdown-content'>
               <li><a href="profile.php?find=true">Profilo</a></li>
@@ -469,13 +467,35 @@
       </section>
       </div>
       </div>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/materialize.min.js"></script>
       <script src="js/main.js"></script>
+      <footer class="page-footer blue lighten-1">
+        <div class="container">
+          <div class="row center">
+            <div class="col l4 s12">
+              <h5 class="white-text">Locazione</h5>
+              <p class="grey-text text-lighten-4">Lucca - Italia</p>
+            </div>
+            <div class="col l4 s12">
+              <h5 class="white-text">Social</h5>
+              <a href="https://facebook.com/aziende.expo" target="_blank"><img src="https://png.icons8.com/material/50/000000/facebook.png"></a>
+              <a href="https://twitter.com/aziendeexpo" target="_blank"><img src="https://png.icons8.com/metro/50/000000/twitter.png"></a>
+              <a href="https://instagram.com/aziendeexpo" target="_blank"><img src="https://png.icons8.com/ios-glyphs/50/000000/instagram-new.png"></a>
+            </div>
+            <div class="col l4 s12">
+              <h5 class="white-text">Contatti</h5>
+              <p class="grey-text text-lighten-4"><a href="mailto:leonard.drici@gmail.com" class="white-text">leonard.drici@gmail.com</a></p>
+              <p class="grey-text text-lighten-4"><a href="mailto:help@aziendeexpo.it" class="white-text">help@aziendeexpo.it</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            © 2018 Copyright AziendeExpo
+          </div>
+        </div>
+      </footer>
       <?php if($mode == true && !isset($_COOKIE['info'])) echo "<script> M.toast({html: 'Ricorda di modificare le info relative all azienda'}, 4000)   </script>"; ?>
-      <script>
-      </script>
   </body>
-
   </html>
