@@ -412,7 +412,7 @@
 
           $stmt->execute();
           $resulto = $stmt->get_result();
-          $azienda = $resulto->fetch_assoc()
+          $azienda = $resulto->fetch_assoc();
           if($azienda['sponsorizzata'] > 0){
             $sponsorizzata = $azienda['sponsorizzata'] - 1;
           }else{
