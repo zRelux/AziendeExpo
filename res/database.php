@@ -602,13 +602,14 @@
 
     function updatePayment($username){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
+      $row = $this->getId($username);
 
       $sql = "INSERT INTO payments (compratore, prezzo, stato, itemid, createdtime) VALUES (?,?,?,?,?)";
       $stmt = $conn->prepare($sql);
       $data =  date('d-m');
       $prezzo = 5.00;
       $itemid = 1;
-      $stmt->bind_param("sisss", $username, $prezzo, $stato, $itemid, $data);
+      $stmt->bind_param("iisss", $row['id'], $prezzo, $stato, $itemid, $data);
 
       $stmt->execute();
       $conn->close();
