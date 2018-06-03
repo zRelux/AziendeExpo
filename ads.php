@@ -135,11 +135,13 @@
 
           onAuthorize: function(data, actions) {
               return actions.payment.execute().then(function(payment) {
+                var em = document.getElementById('email').value;
+                console.log(em);
                 $.ajax({
                   url: 'res/payments.php',
                   type: 'POST',
                   data: {
-                    email: document.getElementById('email').value
+                    email: em
                   },
                   dataType: "json",
                   success: function(result) {
