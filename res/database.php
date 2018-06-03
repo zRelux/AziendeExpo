@@ -116,7 +116,7 @@
 
         $sql = "INSERT INTO azienda VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         $stmt = $conn->prepare($sql);
-
+        
         $id = $row['id'];
         $nome = "Nome azienda";
         $campo1 = "10";
