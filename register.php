@@ -37,7 +37,7 @@
       Thanks for signing up!
       Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
       Please click this link to activate your account:
-      https://aziendeexpo.it/verify.php?email=' . $to . '&hash=' . $hash . '
+      https://aziendeexpo.it/verify.php?email=' . $to . '&hash=' . $hash . ' 
 
       ';
 
