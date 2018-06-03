@@ -393,6 +393,24 @@
     function caricaAziende($val){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
 
+      $sql = "SELECT * FROM payments";
+
+      $stmt = $conn->prepare($sql);
+      $stmt->execute();
+      $result = $stmt->get_result();
+
+      while($row = $result->fetch_assoc();){
+          echo $row['createdtime'];
+      }
+
+
+
+
+
+
+
+
+
       $sql = "SELECT * FROM azienda ORDER BY sponsorizzata DESC LIMIT $val, 10";
 
       $stmt = $conn->prepare($sql);
