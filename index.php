@@ -222,8 +222,8 @@
               <li>
                 <form id="ricercaAz" method="get" action="index.php">
                   <div class="input-field">
-                    <button class="waves-effect waves-teal black-text" type="submit" name="action"><i class="material-icons right">search</i></button>
-                    <input id="ricercaAziende" type="text" class="validate black-text" name="data" onkeydown="search(this)">
+                    <button class="waves-effect waves-teal black-text" type="submit"><i class="material-icons right">search</i></button>
+                    <input id="ricercaAziende" type="text" class="black-text" name="data" onkeydown="search(this)">
                     <!--<input id="" type="text" placeholder="Cerca..."  >onkeyup="ricerca()"-->
                   </div>
                 </form>
