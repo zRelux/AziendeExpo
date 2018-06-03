@@ -48,7 +48,7 @@
   	//$querystring .= "&custom=".USERID;
 
   	// Redirect to paypal IPN
-  	header('location:https://sandbox.paypal.com/cgi-bin/webscr'.$querystring);
+  	header('location:https://ipnpb.sandbox.paypal.com/cgi-bin/webscr'.$querystring);
   	exit();
   } else {
   	// Response from Paypal
@@ -77,7 +77,7 @@
   	$header .= "Content-Type: application/x-www-form-urlencoded\r\n";
   	$header .= "Content-Length: " . strlen($req) . "\r\n\r\n";
 
-  	$fp = fsockopen ('sandbox.paypal.com/cgi-bin/webscr', 443, $errno, $errstr, 30);
+  	$fp = fsockopen ('ipnpb.sandbox.paypal.com/cgi-bin/webscr', 443, $errno, $errstr, 30);
 
   	if (!$fp) {
       fputs($fp, $header . $req);
