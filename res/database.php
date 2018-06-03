@@ -600,31 +600,17 @@
       $conn->close();
     }
 
-    function insertPayment($data){
+    function updatePayment($username){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
-      if (is_array($data)) {
-    		$sql = "INSERT INTO `payments` (txnid, payment_amount, payment_status, itemid, createdtime) VALUES (
-    				'".$data['txn_id']."' ,
-    				'".$data['payment_amount']."' ,
-    				'".$data['payment_status']."' ,
-    				'".$data['item_number']."' ,
-    				'".date("Y-m-d H:i:s")."'
-          )";
-        $conn->query($sql);
 
-        return $conn->insert_id;
-        $conn->close();
-      }
-    }
+      $sql = "INSERT INTO payments (compratore, prezzo, stato, itemid, createdtime) VALUES (?,?,?,?,?)";
+      $stmt = $conn->prepare($sql);
+      $data =  date('d-m-Y H:i:s');
+      $prezzo = 5.00;
+      $itemid = 1;
+      $stmt->bind_param("sisss", $username, $prezzo, $stato, $itemid, $data);
 
-    function checktxnId($tnxid){
-      $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
-      $sql = "SELECT * FROM `payments` WHERE txnid = '$tnxid'";
-      $result = $conn->query($sql);
-
-      if ($result->num_rows == 1) {
-        return false;
-      }
+      $stmt->execute();
       $conn->close();
     }
 
