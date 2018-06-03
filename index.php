@@ -225,7 +225,7 @@
                     <i class="material-icons prefix">search</i>
                     <input id="ricercaAziende" type="text" class="validate" name="data" onkeydown="search(this)">
                     <label for="ricercaAziende">Cerca..-</label>
-                    <input id="" type="text" placeholder="Cerca..."  ><!--onkeyup="ricerca()"-->
+                    <!--<input id="" type="text" placeholder="Cerca..."  >onkeyup="ricerca()"-->
                   </div>
                 </form>
               </li>
