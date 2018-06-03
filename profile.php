@@ -175,7 +175,7 @@
               <div id="profile-page" class="section">
                 <div class="card">
                   <div class="card-image">
-                    <a ><img id="myImg" class="background-image" src="<?php if($result['backgroundimage'] != null && $result['backgroundimage'] != "20") echo $result['backgroundimage']; else echo 'images/background2.jpg' ?>" alt="user background" height="250px"></a>
+                    <img id="myImg" class="background-image" src="<?php if($result['backgroundimage'] != null && $result['backgroundimage'] != "20") echo $result['backgroundimage']; else echo 'images/background2.jpg' ?>" alt="user background" height="250px">
                     <form enctype="multipart/form-data" method="POST" action="./res/upload.php">
                       <input type="file" id="selectedFile1" name="backgroundimage" maxlength='1' accept="image/jpg, image/png, image/jpeg" onchange="form.submit()" style="display: none;" />
                       <a class="btn-floating btn-large waves-effect waves-light btn-upload immagine" onclick="document.getElementById('selectedFile1').click();"><i class="material-icons">add</i></a>
@@ -247,18 +247,7 @@
                     </div>
                   </div>
                 </div>
-                <!-- The Modal -->
-                <div id="myModal" class="modal">
 
-                <!-- The Close Button -->
-                <span class="close">&times;</span>
-
-                <!-- Modal Content (The Image) -->
-                <img class="modal-content" id="img01">
-
-                <!-- Modal Caption (Image Text) -->
-                <div id="caption"></div>
-                </div>
                 <div class="card light-blue lighten-5 hoverable">
                   <div class="card-content black-text">
                     <span class="card-title">Informazioni su di noi.</span>
@@ -480,6 +469,18 @@
         </div>
         </section>
         </div>
+        </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+        <!-- The Close Button -->
+        <span class="close">&times;</span>
+
+        <!-- Modal Content (The Image) -->
+        <img class="modal-content" id="img01">
+
+        <!-- Modal Caption (Image Text) -->
+        <div id="caption"></div>
         </div>
     </main>
       <script src="js/jquery.min.js"></script>

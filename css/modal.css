@@ -20,6 +20,7 @@
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    z-index: 5;
 }
 
 /* Modal Content (Image) */
