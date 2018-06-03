@@ -184,7 +184,7 @@
                     <div class="row pt-2">
                       <div class="card-profile-image">
                         <div class="col s12 m12 l2 center">
-                          <img class="profile-image materialboxed" src="<?php if($result['userimage'] != null && $result['userimage'] != " 20 ") echo $result['userimage']; else echo 'images/background2.jpg' ?>" alt="profile image" width="110px" width="110px">
+                          <img class="profile-image" src="<?php if($result['userimage'] != null && $result['userimage'] != " 20 ") echo $result['userimage']; else echo 'images/background2.jpg' ?>" alt="profile image" width="110px" width="110px">
                           <form enctype="multipart/form-data" method="POST" action="./res/upload.php">
                             <input type="file" id="selectedFile2" name="userimage" maxlength='1' accept="image/jpg, image/png, image/jpeg" onchange="form.submit()" style="display: none;" />
                             <a class="btn-floating btn-large waves-effect waves-light immagine btn-profile" onclick="document.getElementById('selectedFile2').click();"><i class="material-icons">add</i></a>
