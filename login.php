@@ -107,29 +107,32 @@
          <li><a href="res/logout.php">Logout</a></li>
        </ul>
      </header>
-      <div class="materialContainer container">
-         <div class="box">
-           <form class="" action="" method="post" autocomplete="on">
-            <div class="title">Accedi</div>
-            <div class="input">
-              <input name="email" type="email" placeholder="Email" class="validate">
-            </div>
-            <div class="input">
-              <input name="pass" type="password" placeholder="Password" class="validate">
-            </div>
-            <div class="button login">
-               <button type="submit"><span>Accedi</span><i class="fa fa-check"></i></button>
-            </div>
-            <div class="help">
-              <?php
-                echo "<a href='' class=" . "wrong-use" . ">" . $error . "</a>"
-               ?>
-              <a href="forgotPassword.php" class="pass-forgot">Password dimenticata?</a>
-              <a href="register.php" class="nuovo">Crea un account</a>
-            </div>
-          </form>
-        </div>
-      </div>
+     <main>
+       <div class="materialContainer container">
+          <div class="box">
+            <form class="" action="" method="post" autocomplete="on">
+             <div class="title">Accedi</div>
+             <div class="input">
+               <input name="email" type="email" placeholder="Email" class="validate">
+             </div>
+             <div class="input">
+               <input name="pass" type="password" placeholder="Password" class="validate">
+             </div>
+             <div class="button login">
+                <button type="submit"><span>Accedi</span><i class="fa fa-check"></i></button>
+             </div>
+             <div class="help">
+               <?php
+                 echo "<a href='' class=" . "wrong-use" . ">" . $error . "</a>"
+                ?>
+               <a href="forgotPassword.php" class="pass-forgot">Password dimenticata?</a>
+               <a href="register.php" class="nuovo">Crea un account</a>
+             </div>
+           </form>
+         </div>
+       </div>
+     </main>
+
       <script src="js/jquery.min.js"></script>
       <script src="js/materialize.min.js"></script>
       <script src="js/main.js"></script>

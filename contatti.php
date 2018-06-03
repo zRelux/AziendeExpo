@@ -67,56 +67,58 @@
       <li><a href="res/logout.php">Logout</a></li>
     </ul>
   </header>
+  <main>
+    <div class="container">
+      <div class="team card center">
+        <div class="row">
+          <div class="col s12 l2">
 
-  <div class="container">
-    <div class="team card center">
-      <div class="row">
-        <div class="col s12 l2">
+          </div>
+          <div class="col s12 l3">
+            <img src="images/download.jpg" alt="developer image" class="circle responsive-img">
+            <!-- notice the "circle" class -->
+          </div>
+          <div class="col s12 l5">
+            <h5>Sviluppatore</h5>
+            <p>Leonardo Drici</p>
+            <p>Programmatore, Tester</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="divider">
+
+          </div>
+          <div class="col s12 center">
+            <h4>Tecnologie principali utilizzate</h4>
+          </div>
+          <div class="col s12 l1">
+
+          </div>
+          <div class="col s12 l2">
+            <img src="images/html.png" alt="" class="responsive-img">
+          </div>
+          <div class="col s12 l2">
+            <img src="images/css.png" alt="" class="responsive-img">
+          </div>
+          <div class="col s12 l2">
+            <img src="images/js.png" alt="" class="responsive-img">
+          </div>
+          <div class="col s12 l2">
+            <img src="images/php.png" alt="" class="responsive-img">
+          </div>
+          <div class="col s12 l2">
+            <img src="images/mysql.png" alt="" class="responsive-img">
+          </div>
+          <div class="col s12 l1">
+
+          </div>
 
         </div>
-        <div class="col s12 l3">
-          <img src="images/download.jpg" alt="developer image" class="circle responsive-img">
-          <!-- notice the "circle" class -->
-        </div>
-        <div class="col s12 l5">
-          <h5>Sviluppatore</h5>
-          <p>Leonardo Drici</p>
-          <p>Programmatore, Tester</p>
-        </div>
+        <br>
       </div>
-      <div class="row">
-        <div class="divider">
-
-        </div>
-        <div class="col s12 center">
-          <h4>Tecnologie principali utilizzate</h4>
-        </div>
-        <div class="col s12 l1">
-
-        </div>
-        <div class="col s12 l2">
-          <img src="images/html.png" alt="" class="responsive-img">
-        </div>
-        <div class="col s12 l2">
-          <img src="images/css.png" alt="" class="responsive-img">
-        </div>
-        <div class="col s12 l2">
-          <img src="images/js.png" alt="" class="responsive-img">
-        </div>
-        <div class="col s12 l2">
-          <img src="images/php.png" alt="" class="responsive-img">
-        </div>
-        <div class="col s12 l2">
-          <img src="images/mysql.png" alt="" class="responsive-img">
-        </div>
-        <div class="col s12 l1">
-
-        </div>
-
-      </div>
-      <br>
     </div>
-  </div>
+  </main>
+
   <!--  Scripts-->
   <script src="js/jquery.min.js"></script>
   <script src="js/materialize.min.js"></script>

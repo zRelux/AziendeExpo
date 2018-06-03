@@ -147,274 +147,226 @@
       </ul>
     </header>
 
+    <main>
+      <!--FAI SOLO SE TUO PROFILO-->
+      <?php
 
-    <!--FAI SOLO SE TUO PROFILO-->
+      if($mode == true){
+        echo '<div class="fixed-action-btn">
+          <a class="btn-floating btn-large red" onselectstart="return false;" ondragstart="return false;">
+            <i class="large material-icons">mode_edit</i>
+          </a>
+          <ul>
+            <li><a class="btn-floating red tooltipped" data-position="left" data-tooltip="Visualizza statistiche" onselectstart="return false;" ondragstart="return false;" href=".\statistiche.php"><i class="material-icons">insert_chart</i></a></li>
+            <li><a class="btn-floating yellow darken-1 tooltipped" data-position="left" data-tooltip="Posta nuovo progetto" onselectstart="return false;" ondragstart="return false;" href=".\newPost.php"><i class="material-icons">format_quote</i></a></li>
+            <li><a class="btn-floating green tooltipped" data-position="left" data-tooltip="Salva modifiche" onselectstart="return false;" ondragstart="return false;" onclick="saveEdit()"><i class="material-icons">save</i></a></li>
+            <li><a class="btn-floating blue tooltipped" data-position="left" data-tooltip="Modifica" onselectstart="return false;" ondragstart="return false;" onclick="modify()"><i class="material-icons">mode_edit</i></a></li>
+          </ul>
+        </div>';
+      }
+      ?>
 
-    <?php
-    if($mode == true){
-      echo '<div class="fixed-action-btn">
-        <a class="btn-floating btn-large red" onselectstart="return false;" ondragstart="return false;">
-          <i class="large material-icons">mode_edit</i>
-        </a>
-        <ul>
-          <li><a class="btn-floating red tooltipped" data-position="left" data-tooltip="Visualizza statistiche" onselectstart="return false;" ondragstart="return false;" href=".\statistiche.php"><i class="material-icons">insert_chart</i></a></li>
-          <li><a class="btn-floating yellow darken-1 tooltipped" data-position="left" data-tooltip="Posta nuovo progetto" onselectstart="return false;" ondragstart="return false;" href=".\newPost.php"><i class="material-icons">format_quote</i></a></li>
-          <li><a class="btn-floating green tooltipped" data-position="left" data-tooltip="Salva modifiche" onselectstart="return false;" ondragstart="return false;" onclick="saveEdit()"><i class="material-icons">save</i></a></li>
-          <li><a class="btn-floating blue tooltipped" data-position="left" data-tooltip="Modifica" onselectstart="return false;" ondragstart="return false;" onclick="modify()"><i class="material-icons">mode_edit</i></a></li>
-        </ul>
-      </div>';
-    }
-    ?>
-
-      <!-- START MAIN -->
-      <div id="main">
-        <div class="wrapper">
-          <section id="content">
-            <div id="profile-page" class="section">
-              <div class="card">
-                <div class="card-image">
-                  <a href="<?php if($result['backgroundimage'] != null && $result['backgroundimage'] != " 20 ") echo $result['backgroundimage']; else echo 'images/background2.jpg' ?>"><img class="background-image" src="<?php if($result['backgroundimage'] != null && $result['backgroundimage'] != "20") echo $result['backgroundimage']; else echo 'images/background2.jpg' ?>" alt="user background" height="250px"></a>
-                  <form enctype="multipart/form-data" method="POST" action="./res/upload.php">
-                    <input type="file" id="selectedFile1" name="backgroundimage" maxlength='1' accept="image/jpg, image/png, image/jpeg" onchange="form.submit()" style="display: none;" />
-                    <a class="btn-floating btn-large waves-effect waves-light btn-upload immagine" onclick="document.getElementById('selectedFile1').click();"><i class="material-icons">add</i></a>
-                  </form>
-                </div>
-                <div class="card-content">
-                  <div class="row pt-2">
-                    <div class="card-profile-image">
-                      <div class="col s12 m12 l2 center">
-                        <img class="profile-image materialboxed" src="<?php if($result['userimage'] != null && $result['userimage'] != " 20 ") echo $result['userimage']; else echo 'images/background2.jpg' ?>" alt="profile image" width="110px" width="110px">
-                        <form enctype="multipart/form-data" method="POST" action="./res/upload.php">
-                          <input type="file" id="selectedFile2" name="userimage" maxlength='1' accept="image/jpg, image/png, image/jpeg" onchange="form.submit()" style="display: none;" />
-                          <a class="btn-floating btn-large waves-effect waves-light immagine btn-profile" onclick="document.getElementById('selectedFile2').click();"><i class="material-icons">add</i></a>
-                        </form>
+        <!-- START MAIN -->
+        <div id="main">
+          <div class="wrapper">
+            <section id="content">
+              <div id="profile-page" class="section">
+                <div class="card">
+                  <div class="card-image">
+                    <a href="<?php if($result['backgroundimage'] != null && $result['backgroundimage'] != " 20 ") echo $result['backgroundimage']; else echo 'images/background2.jpg' ?>"><img class="background-image" src="<?php if($result['backgroundimage'] != null && $result['backgroundimage'] != "20") echo $result['backgroundimage']; else echo 'images/background2.jpg' ?>" alt="user background" height="250px"></a>
+                    <form enctype="multipart/form-data" method="POST" action="./res/upload.php">
+                      <input type="file" id="selectedFile1" name="backgroundimage" maxlength='1' accept="image/jpg, image/png, image/jpeg" onchange="form.submit()" style="display: none;" />
+                      <a class="btn-floating btn-large waves-effect waves-light btn-upload immagine" onclick="document.getElementById('selectedFile1').click();"><i class="material-icons">add</i></a>
+                    </form>
+                  </div>
+                  <div class="card-content">
+                    <div class="row pt-2">
+                      <div class="card-profile-image">
+                        <div class="col s12 m12 l2 center">
+                          <img class="profile-image materialboxed" src="<?php if($result['userimage'] != null && $result['userimage'] != " 20 ") echo $result['userimage']; else echo 'images/background2.jpg' ?>" alt="profile image" width="110px" width="110px">
+                          <form enctype="multipart/form-data" method="POST" action="./res/upload.php">
+                            <input type="file" id="selectedFile2" name="userimage" maxlength='1' accept="image/jpg, image/png, image/jpeg" onchange="form.submit()" style="display: none;" />
+                            <a class="btn-floating btn-large waves-effect waves-light immagine btn-profile" onclick="document.getElementById('selectedFile2').click();"><i class="material-icons">add</i></a>
+                          </form>
+                        </div>
                       </div>
-                    </div>
-                    <?php
-                    $campi = 4;
-                    $i = 10;
-                    if(empty($result['nome_campo_1']) || empty($result['campo_1'])){
-                      $campi --;
-                    }
-                    if(empty($result['nome_campo_2']) || empty($result['campo_2'])){
-                      $campi --;
-                    }
-                    if(empty($result['nome_campo_3']) || empty($result['campo_3'])){
-                      $campi --;
-                    }
-                    $spazio = $i / $campi;
+                      <?php
+                      $campi = 4;
+                      $i = 10;
+                      if(empty($result['nome_campo_1']) || empty($result['campo_1'])){
+                        $campi --;
+                      }
+                      if(empty($result['nome_campo_2']) || empty($result['campo_2'])){
+                        $campi --;
+                      }
+                      if(empty($result['nome_campo_3']) || empty($result['campo_3'])){
+                        $campi --;
+                      }
+                      $spazio = $i / $campi;
 
-                    echo '<div class="col s12 m12 l' . ceil($spazio) . ' center-align">
-                            <h4 class="m-text" contenteditable="false" class="card-title grey-text text-darken-4">' . $result['ragione'] . '</h4>
-                            <p class="medium-small grey-text">Nome Azienda</p>
-                          </div>';
-                    if(!empty($result['nome_campo_1']) &&  !empty($result['campo_1'])){
-                      echo '<div class="col s12 m12 l' . round($spazio, 0, PHP_ROUND_HALF_DOWN) . ' center-align">
-                              <h4 class="card-title grey-text text-darken-4 m-text" contenteditable="false">' . $result['campo_1'] . '</h4>
-                              <p class="medium-small grey-text m-text" contenteditable="false">' . $result['nome_campo_1'] . '</p>
+                      echo '<div class="col s12 m12 l' . ceil($spazio) . ' center-align">
+                              <h4 class="m-text" contenteditable="false" class="card-title grey-text text-darken-4">' . $result['ragione'] . '</h4>
+                              <p class="medium-small grey-text">Nome Azienda</p>
                             </div>';
-                    }else{
-                      echo '<div class="col s12 m12 l2 center-align invisibile" style="display: none">
-                              <h4 class="card-title grey-text text-darken-4 m-text invisibile" contenteditable="false">' . $result['campo_1'] . '</h4>
-                              <p class="medium-small grey-text m-text" contenteditable="false">' . $result['nome_campo_1'] . '</p>
-                            </div>';
-                    }
-                    if(!empty($result['nome_campo_2']) &&  !empty($result['campo_2'])){
-                      echo '<div class="col s12 m12 l' . round($spazio, 0, PHP_ROUND_HALF_DOWN) . ' center-align">
-                              <h4 class="card-title grey-text text-darken-4 m-text" contenteditable="false">' . $result['campo_2'] . '</h4>
-                              <p class="medium-small grey-text m-text" contenteditable="false">' . $result['nome_campo_2'] . '</p>
-                            </div>';
-                    }else{
-                      echo '<div class="col s12 m12 l center-align invisibile" style="display: none">
-                              <h4 class="card-title grey-text text-darken-4 m-text invisibile" contenteditable="false">' . $result['campo_2'] . '</h4>
-                              <p class="medium-small grey-text m-text" contenteditable="false">' . $result['nome_campo_2'] . '</p>
-                            </div>';
-                    }
-                    if(!empty($result['nome_campo_3']) &&  !empty($result['campo_3'])){
-                      echo '<div class="col s12 m12 l' . round($spazio, 0, PHP_ROUND_HALF_DOWN) . ' center-align">
-                              <h4 class="card-title grey-text text-darken-4 m-text" contenteditable="false">' . $result['campo_3'] . '</h4>
-                              <p class="medium-small grey-text m-text" contenteditable="false">' . $result['nome_campo_3'] . '</p>
-                            </div>';
-                    }else{
-                      echo '<div class="col s12 m12 l center-align invisibile" style="display: none">
-                              <h4 class="card-title grey-text text-darken-4 m-text invisibile" contenteditable="false">' . $result['campo_3'] . '</h4>
-                              <p class="medium-small grey-text m-text" contenteditable="false">' . $result['nome_campo_3'] . '</p>
-                            </div>';
-                    }
-                  ?>
+                      if(!empty($result['nome_campo_1']) &&  !empty($result['campo_1'])){
+                        echo '<div class="col s12 m12 l' . round($spazio, 0, PHP_ROUND_HALF_DOWN) . ' center-align">
+                                <h4 class="card-title grey-text text-darken-4 m-text" contenteditable="false">' . $result['campo_1'] . '</h4>
+                                <p class="medium-small grey-text m-text" contenteditable="false">' . $result['nome_campo_1'] . '</p>
+                              </div>';
+                      }else{
+                        echo '<div class="col s12 m12 l2 center-align invisibile" style="display: none">
+                                <h4 class="card-title grey-text text-darken-4 m-text invisibile" contenteditable="false">' . $result['campo_1'] . '</h4>
+                                <p class="medium-small grey-text m-text" contenteditable="false">' . $result['nome_campo_1'] . '</p>
+                              </div>';
+                      }
+                      if(!empty($result['nome_campo_2']) &&  !empty($result['campo_2'])){
+                        echo '<div class="col s12 m12 l' . round($spazio, 0, PHP_ROUND_HALF_DOWN) . ' center-align">
+                                <h4 class="card-title grey-text text-darken-4 m-text" contenteditable="false">' . $result['campo_2'] . '</h4>
+                                <p class="medium-small grey-text m-text" contenteditable="false">' . $result['nome_campo_2'] . '</p>
+                              </div>';
+                      }else{
+                        echo '<div class="col s12 m12 l center-align invisibile" style="display: none">
+                                <h4 class="card-title grey-text text-darken-4 m-text invisibile" contenteditable="false">' . $result['campo_2'] . '</h4>
+                                <p class="medium-small grey-text m-text" contenteditable="false">' . $result['nome_campo_2'] . '</p>
+                              </div>';
+                      }
+                      if(!empty($result['nome_campo_3']) &&  !empty($result['campo_3'])){
+                        echo '<div class="col s12 m12 l' . round($spazio, 0, PHP_ROUND_HALF_DOWN) . ' center-align">
+                                <h4 class="card-title grey-text text-darken-4 m-text" contenteditable="false">' . $result['campo_3'] . '</h4>
+                                <p class="medium-small grey-text m-text" contenteditable="false">' . $result['nome_campo_3'] . '</p>
+                              </div>';
+                      }else{
+                        echo '<div class="col s12 m12 l center-align invisibile" style="display: none">
+                                <h4 class="card-title grey-text text-darken-4 m-text invisibile" contenteditable="false">' . $result['campo_3'] . '</h4>
+                                <p class="medium-small grey-text m-text" contenteditable="false">' . $result['nome_campo_3'] . '</p>
+                              </div>';
+                      }
+                    ?>
+                    </div>
+                  </div>
+                </div>
+                <div class="card light-blue lighten-5 hoverable">
+                  <div class="card-content black-text">
+                    <span class="card-title">Informazioni su di noi.</span>
+                    <p class="m-text" contenteditable="false">
+                      <?php echo $result['info'] ?>
+                    </p>
                   </div>
                 </div>
               </div>
-              <div class="card light-blue lighten-5 hoverable">
-                <div class="card-content black-text">
-                  <span class="card-title">Informazioni su di noi.</span>
-                  <p class="m-text" contenteditable="false">
-                    <?php echo $result['info'] ?>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div id="profile-page-content" class="row">
-              <div id="profile-page-sidebar" class="col s12 m12 l4">
-                <ul id="profile-page-about-details" class="collection z-depth-3">
-                  <?php
-                      if(!empty($result['sitoweb'])){
-                        $sito =  str_replace("https://", "", $result['sitoweb']);
-                        $sito =  str_replace("http://", "", $sito);
-                        echo '<li class="collection-item">
-                          <div class="row">
-                            <div class="col s12 m4">
-                              <i class="material-icons left">card_travel</i> Sitoweb</div>
-                            <div class="col s12 m8 right-align"><a target="_blank" href="' . $result['sitoweb'] . '">' . $sito . '</a></div>
-                          </div>
-                        </li>';
-                      }else{
-                        echo '<li class="collection-item invisibile" style="display: none">
-                          <div class="row">
-                            <div class="col s12 m4">
-                              <i class="material-icons left">card_travel</i> Sitoweb</div>
-                            <div class="col s12 m8 right-align"><a target="_blank" href="' . $result['sitoweb'] . '">' . $sito . '</a></div>
-                          </div>
-                        </li>';
-                      }
-                      if(!empty($result['sede'])){
-                        echo '<li class="collection-item">
-                          <div class="row">
-                            <div class="col s12 m4">
-                              <i class="material-icons left">domain</i> Sede in</div>
-                            <div class="col s12 m8 right-align m-text" contenteditable="false">'. $result['sede'] . '</div>
-                          </div>
-                        </li>';
-                      }else{
-                        echo '<li class="collection-item invisibile" style="display: none">
-                          <div class="row">
-                            <div class="col s12 m4">
-                              <i class="material-icons left">domain</i> Sede in</div>
-                            <div class="col s12 m8 right-align m-text" contenteditable="false">'. $result['sede'] . '</div>
-                          </div>
-                        </li>';
-                      }
-                      if(!empty($result['nata'])){
-                        echo '<li class="collection-item">
-                          <div class="row">
-                            <div class="col s12 m5">
-                              <i class="material-icons left">cake</i> Fondata il</div>
-                            <div class="col s12 m7 right-align m-text" contenteditable="false">'. $result['nata'] . '</div>
-                          </div>
-                        </li>';
-                      }else{
-                        echo '<li class="collection-item invisibile" style="display: none">
-                          <div class="row">
-                            <div class="col s12 m5">
-                              <i class="material-icons left">cake</i> Fondata il</div>
-                            <div class="col s12 m7 right-align m-text" contenteditable="false">'. $result['nata'] . '</div>
-                          </div>
-                        </li>';
-                      }
-                      if(!empty($result['email'])){
-                        echo '<li class="collection-item">
-                          <div class="row">
-                            <div class="col s12 m5">
-                              <i class="material-icons">email</i> Email</div>
-                            <div class="col s12 m7 right-align">'. $result['email'] . '</div>
-                          </div>
-                        </li>';
-                      }else{
-                        echo '<li class="collection-item invisibile" style="display: none">
-                          <div class="row">
-                            <div class="col s12 m5">
-                              <i class="material-icons">email</i> Email</div>
-                            <div class="col s12 m7 right-align">'. $result['email'] . '</div>
-                          </div>
-                        </li>';
-                      }
-                      if(!empty($result['telefono'])){
-                        echo '<li class="collection-item">
-                          <div class="row">
-                            <div class="col s12 m5">
-                              <i class="material-icons">perm_phone_msg</i> Telefono</div>
-                            <div class="col s12 m7 right-align">'. $result['telefono'] . '</div>
-                          </div>
-                        </li>';
-                      }else{
-                        echo '<li class="collection-item invisibile" style="display: none">
-                          <div class="row">
-                            <div class="col s12 m5">
-                              <i class="material-icons">perm_phone_msg</i> Telefono</div>
-                            <div class="col s12 m7 right-align">'. $result['telefono'] . '</div>
-                          </div>
-                        </li>';
-                      }
-                      if(!empty($result['tipoazienda'])){
-                        echo '<li class="collection-item">
-                          <div class="row">
-                            <div class="col s12 m4">
-                              <i class="material-icons">style</i> Tipologia:</div>
-                            <div class="col s12 m8 right-align">'. $result['tipoazienda'] . '</div>
-                          </div>
-                        </li>';
-                      }else{
-                        echo '<li class="collection-item invisibile" style="display: none">
-                          <div class="row">
-                            <div class="col s12 m8">
-                              <i class="material-icons">style</i> Tipologia:</div>
-                            <div class="col s12 m48 right-align">'. $result['tipoazienda'] . '</div>
-                          </div>
-                        </li>';
-                      }
-                    ?>
-                </ul>
-                <?php
-                    if($cards)
-                      if ($cards->num_rows > 0) {
-                        echo '<div class="contact">
-                                <div class="card z-depth-3">
-                                  <div class="card-content black-text">
-                                    <div class="row">
-                                    <form action="res/contact.php" method="POST" class="col s12 m12">
-                                      <h5 class="center">Contattaci!</h5>
-                                      <input id="emailDest" name="emailDest" type="text" class="validate" style="display: none" value=' . $result['email'] . ' required>
-                                      <div class="row">
-                                        <div class="input-field col s6">
-                                          <input id="first_name" name="nome" type="text" class="validate" required>
-                                          <label for="first_name">Nome mittente</label>
-                                        </div>
-                                        <div class="input-field col s6">
-                                          <input id="last_name" name="cognome" type="text" class="validate" required>
-                                          <label for="last_name">Cognome Mittente</label>
-                                        </div>
-                                      </div>
-                                      <div class="row">
-                                        <div class="input-field col s12 m12">
-                                          <input id="email" name="emailMitt" type="email" class="validate" required>
-                                          <label for="email">Email</label>
-                                        </div>
-                                      </div>
-                                      <div class="row">
-                                        <div class="input-field col s12 m12">
-                                          <textarea id="descrizione" name="desc" class="materialize-textarea" data-length="300" required></textarea>
-                                          <label for="textarea1">Descrizione</label>
-                                        </div>
-                                      </div>
-                                      <div class="row center">
-                                        <button class="btn waves-effect waves-light" type="submit" name="action" >Contatta
-                                          <i class="material-icons right">send</i>
-                                        </button>
-                                      </div>
-                                    </form>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>';
-                      }
-                  ?>
-              </div>
-              <div id="profile-page-wall" class="col s12 m12 l8">
-                <div id="profile-page-wall-posts" class="row">
-                  <div class="col s12 m12">
+              <div id="profile-page-content" class="row">
+                <div id="profile-page-sidebar" class="col s12 m12 l4">
+                  <ul id="profile-page-about-details" class="collection z-depth-3">
                     <?php
+                        if(!empty($result['sitoweb'])){
+                          $sito =  str_replace("https://", "", $result['sitoweb']);
+                          $sito =  str_replace("http://", "", $sito);
+                          echo '<li class="collection-item">
+                            <div class="row">
+                              <div class="col s12 m4">
+                                <i class="material-icons left">card_travel</i> Sitoweb</div>
+                              <div class="col s12 m8 right-align"><a target="_blank" href="' . $result['sitoweb'] . '">' . $sito . '</a></div>
+                            </div>
+                          </li>';
+                        }else{
+                          echo '<li class="collection-item invisibile" style="display: none">
+                            <div class="row">
+                              <div class="col s12 m4">
+                                <i class="material-icons left">card_travel</i> Sitoweb</div>
+                              <div class="col s12 m8 right-align"><a target="_blank" href="' . $result['sitoweb'] . '">' . $sito . '</a></div>
+                            </div>
+                          </li>';
+                        }
+                        if(!empty($result['sede'])){
+                          echo '<li class="collection-item">
+                            <div class="row">
+                              <div class="col s12 m4">
+                                <i class="material-icons left">domain</i> Sede in</div>
+                              <div class="col s12 m8 right-align m-text" contenteditable="false">'. $result['sede'] . '</div>
+                            </div>
+                          </li>';
+                        }else{
+                          echo '<li class="collection-item invisibile" style="display: none">
+                            <div class="row">
+                              <div class="col s12 m4">
+                                <i class="material-icons left">domain</i> Sede in</div>
+                              <div class="col s12 m8 right-align m-text" contenteditable="false">'. $result['sede'] . '</div>
+                            </div>
+                          </li>';
+                        }
+                        if(!empty($result['nata'])){
+                          echo '<li class="collection-item">
+                            <div class="row">
+                              <div class="col s12 m5">
+                                <i class="material-icons left">cake</i> Fondata il</div>
+                              <div class="col s12 m7 right-align m-text" contenteditable="false">'. $result['nata'] . '</div>
+                            </div>
+                          </li>';
+                        }else{
+                          echo '<li class="collection-item invisibile" style="display: none">
+                            <div class="row">
+                              <div class="col s12 m5">
+                                <i class="material-icons left">cake</i> Fondata il</div>
+                              <div class="col s12 m7 right-align m-text" contenteditable="false">'. $result['nata'] . '</div>
+                            </div>
+                          </li>';
+                        }
+                        if(!empty($result['email'])){
+                          echo '<li class="collection-item">
+                            <div class="row">
+                              <div class="col s12 m5">
+                                <i class="material-icons">email</i> Email</div>
+                              <div class="col s12 m7 right-align">'. $result['email'] . '</div>
+                            </div>
+                          </li>';
+                        }else{
+                          echo '<li class="collection-item invisibile" style="display: none">
+                            <div class="row">
+                              <div class="col s12 m5">
+                                <i class="material-icons">email</i> Email</div>
+                              <div class="col s12 m7 right-align">'. $result['email'] . '</div>
+                            </div>
+                          </li>';
+                        }
+                        if(!empty($result['telefono'])){
+                          echo '<li class="collection-item">
+                            <div class="row">
+                              <div class="col s12 m5">
+                                <i class="material-icons">perm_phone_msg</i> Telefono</div>
+                              <div class="col s12 m7 right-align">'. $result['telefono'] . '</div>
+                            </div>
+                          </li>';
+                        }else{
+                          echo '<li class="collection-item invisibile" style="display: none">
+                            <div class="row">
+                              <div class="col s12 m5">
+                                <i class="material-icons">perm_phone_msg</i> Telefono</div>
+                              <div class="col s12 m7 right-align">'. $result['telefono'] . '</div>
+                            </div>
+                          </li>';
+                        }
+                        if(!empty($result['tipoazienda'])){
+                          echo '<li class="collection-item">
+                            <div class="row">
+                              <div class="col s12 m4">
+                                <i class="material-icons">style</i> Tipologia:</div>
+                              <div class="col s12 m8 right-align">'. $result['tipoazienda'] . '</div>
+                            </div>
+                          </li>';
+                        }else{
+                          echo '<li class="collection-item invisibile" style="display: none">
+                            <div class="row">
+                              <div class="col s12 m8">
+                                <i class="material-icons">style</i> Tipologia:</div>
+                              <div class="col s12 m48 right-align">'. $result['tipoazienda'] . '</div>
+                            </div>
+                          </li>';
+                        }
+                      ?>
+                  </ul>
+                  <?php
                       if($cards)
-                        if ($cards->num_rows <= 0) {
+                        if ($cards->num_rows > 0) {
                           echo '<div class="contact">
                                   <div class="card z-depth-3">
                                     <div class="card-content black-text">
@@ -454,19 +406,68 @@
                                     </div>
                                   </div>
                                 </div>';
-                        }else{
-                          loadPosts($cards);
                         }
-                      ?>
+                    ?>
+                </div>
+                <div id="profile-page-wall" class="col s12 m12 l8">
+                  <div id="profile-page-wall-posts" class="row">
+                    <div class="col s12 m12">
+                      <?php
+                        if($cards)
+                          if ($cards->num_rows <= 0) {
+                            echo '<div class="contact">
+                                    <div class="card z-depth-3">
+                                      <div class="card-content black-text">
+                                        <div class="row">
+                                        <form action="res/contact.php" method="POST" class="col s12 m12">
+                                          <h5 class="center">Contattaci!</h5>
+                                          <input id="emailDest" name="emailDest" type="text" class="validate" style="display: none" value=' . $result['email'] . ' required>
+                                          <div class="row">
+                                            <div class="input-field col s6">
+                                              <input id="first_name" name="nome" type="text" class="validate" required>
+                                              <label for="first_name">Nome mittente</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                              <input id="last_name" name="cognome" type="text" class="validate" required>
+                                              <label for="last_name">Cognome Mittente</label>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="input-field col s12 m12">
+                                              <input id="email" name="emailMitt" type="email" class="validate" required>
+                                              <label for="email">Email</label>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="input-field col s12 m12">
+                                              <textarea id="descrizione" name="desc" class="materialize-textarea" data-length="300" required></textarea>
+                                              <label for="textarea1">Descrizione</label>
+                                            </div>
+                                          </div>
+                                          <div class="row center">
+                                            <button class="btn waves-effect waves-light" type="submit" name="action" >Contatta
+                                              <i class="material-icons right">send</i>
+                                            </button>
+                                          </div>
+                                        </form>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>';
+                          }else{
+                            loadPosts($cards);
+                          }
+                        ?>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+          </div>
         </div>
-      </div>
-      </section>
-      </div>
-      </div>
+        </section>
+        </div>
+        </div>
+    </main>
       <script src="js/jquery.min.js"></script>
       <script src="js/materialize.min.js"></script>
       <script src="js/main.js"></script>

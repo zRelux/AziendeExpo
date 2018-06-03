@@ -72,57 +72,59 @@
       <li><a href="res/logout.php">Logout</a></li>
     </ul>
   </header>
-
-  <form enctype="multipart/form-data" method="POST" action="res/save.php" autocomplete="off">
-    <div class="row">
-      <div class="ccont">
-        <div class="fuoric l8 m12 s12 offset-l2">
-          <div class="row">
-            <div class="col l8 m12 s12 offset-l2">
-              <h4 class="center-align">Fuori</h4>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col l8 m12 s12 offset-l2">
-              <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                  <img materialize="" class="materialboxed" id="img" src="images/background2.jpg" alt="user background" width="1307px" width="735px">
-                  <input type="file" id="selectedFile1" name="postimage" maxlength='1' accept="image/jpg, image/png, image/jpeg" style="display: none;" onChange="readURL(this);"/>
-                  <a class="btn-floating btn-large waves-effect waves-light red btn-upload" onclick="document.getElementById('selectedFile1').click();"><i class="material-icons">add</i></a>
-                </div>
-                <div class="card-content hoverable">
-                  <input type="text" id="testoDaCopiare" name="nome" placeholder="Nome del progetto | Prodotto" maxlength="45" onkeyup="copia()" required>
-                </div>
-                <div class="card-action">
-                  <input type="text" id="linkProdotto" name="linkProdotto" placeholder="Link che porta al prodotto | progetto">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="dentroc l6 m12 s12 offset-l2">
-          <div class="row">
-            <div class="col l8 m12 s12 offset-l2">
-              <h4 class="center-align">Dentro</h4>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col l8 m12 s12 offset-l2">
-              <div class="card-reveal hoverable">
-                <span id="progsubTitle" class="card-title grey-text text-darken-4 testoDaModificare">Nome Progetto | Prodotto<i class="material-icons right">close</i></span>
-                <input type="text" name="info" placeholder="Informazioni relative al progetto" required>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="bcont">
+  <main>
+    <form enctype="multipart/form-data" method="POST" action="res/save.php" autocomplete="off">
       <div class="row">
-          <button type="submit" class="waves-effect waves-light btn col s2 offset-s5"><i class="material-icons left">cloud</i>Posta</button>
+        <div class="ccont">
+          <div class="fuoric l8 m12 s12 offset-l2">
+            <div class="row">
+              <div class="col l8 m12 s12 offset-l2">
+                <h4 class="center-align">Fuori</h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col l8 m12 s12 offset-l2">
+                <div class="card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                    <img materialize="" class="materialboxed" id="img" src="images/background2.jpg" alt="user background" width="1307px" width="735px">
+                    <input type="file" id="selectedFile1" name="postimage" maxlength='1' accept="image/jpg, image/png, image/jpeg" style="display: none;" onChange="readURL(this);"/>
+                    <a class="btn-floating btn-large waves-effect waves-light red btn-upload" onclick="document.getElementById('selectedFile1').click();"><i class="material-icons">add</i></a>
+                  </div>
+                  <div class="card-content hoverable">
+                    <input type="text" id="testoDaCopiare" name="nome" placeholder="Nome del progetto | Prodotto" maxlength="45" onkeyup="copia()" required>
+                  </div>
+                  <div class="card-action">
+                    <input type="text" id="linkProdotto" name="linkProdotto" placeholder="Link che porta al prodotto | progetto">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dentroc l6 m12 s12 offset-l2">
+            <div class="row">
+              <div class="col l8 m12 s12 offset-l2">
+                <h4 class="center-align">Dentro</h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col l8 m12 s12 offset-l2">
+                <div class="card-reveal hoverable">
+                  <span id="progsubTitle" class="card-title grey-text text-darken-4 testoDaModificare">Nome Progetto | Prodotto<i class="material-icons right">close</i></span>
+                  <input type="text" name="info" placeholder="Informazioni relative al progetto" required>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </form>
+      <div class="bcont">
+        <div class="row">
+            <button type="submit" class="waves-effect waves-light btn col s2 offset-s5"><i class="material-icons left">cloud</i>Posta</button>
+        </div>
+      </div>
+    </form>
+  </main>
+
   <script src="js/jquery.min.js"></script>
   <script src="js/materialize.min.js"></script>
   <script src="js/main.js"></script>

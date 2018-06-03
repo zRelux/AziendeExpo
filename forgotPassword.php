@@ -86,26 +86,28 @@
          <li><a href="res/logout.php">Logout</a></li>
        </ul>
      </header>
-      <div class="materialContainer">
-         <div class="box">
-           <form class="" action="" method="post" autocomplete="on">
-            <div class="title">Ricorda Password</div>
-            <div class="input">
-              <input name="email" type="email" placeholder="Email" class="validate">
-            </div>
-            <div class="button login">
-               <button type="submit"><span>Invia email</span><i class="fa fa-check"></i></button>
-            </div>
-            <div class="help">
-              <?php
-                echo "<a href='' class=" . "wrong-use" . ">" . $error . "</a>"
-               ?>
-              <a href="login.php" class="pass-forgot">Accedi</a>
-              <a href="register.php" class="nuovo">Crea un account</a>
-            </div>
-          </form>
-        </div>
-      </div>
+     <main>
+       <div class="materialContainer">
+          <div class="box">
+            <form class="" action="" method="post" autocomplete="on">
+             <div class="title">Ricorda Password</div>
+             <div class="input">
+               <input name="email" type="email" placeholder="Email" class="validate">
+             </div>
+             <div class="button login">
+                <button type="submit"><span>Invia email</span><i class="fa fa-check"></i></button>
+             </div>
+             <div class="help">
+               <?php
+                 echo "<a href='' class=" . "wrong-use" . ">" . $error . "</a>"
+                ?>
+               <a href="login.php" class="pass-forgot">Accedi</a>
+               <a href="register.php" class="nuovo">Crea un account</a>
+             </div>
+           </form>
+         </div>
+       </div>
+     </main>
       <script src="js/jquery.min.js"></script>
       <script src="js/materialize.min.js"></script>
       <script src="js/main.js"></script>

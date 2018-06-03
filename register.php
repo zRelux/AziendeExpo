@@ -37,7 +37,7 @@
       Thanks for signing up!
       Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
       Please click this link to activate your account:
-      https://aziendeexpo.it/verify.php?email=' . $to . '&hash=' . $hash . ' 
+      https://aziendeexpo.it/verify.php?email=' . $to . '&hash=' . $hash . '
 
       ';
 
@@ -117,31 +117,34 @@
          <li><a href="res/logout.php">Logout</a></li>
        </ul>
      </header>
-     <div class="materialContainer">
-        <div class="box">
-          <form class="" action="" method="post" autocomplete="off">
-           <div class="title">Registrazione</div>
-           <div class="input">
-             <input name="remail" type="email" placeholder="Email" class="validate">
-           </div>
-           <div class="input">
-             <input name="regpass" type="password" placeholder="Password" class="validate">
-           </div>
-           <div class="input">
-             <input name="reregpass" type="password" placeholder="Ripeti Password" class="validate">
-           </div>
-           <div class="button login">
-              <button type="submit"><span>Registrati</span><i class="fa fa-check"></i></button>
-           </div>
-           <div class="help">
-             <?php
-               echo "<a href='' class=" . "wrong-use" . ">" . $errorReg . "</a>"
-              ?>
-             <a href="login.php" class="nuovo">Hai già un'account? Accedi.</a>
-           </div>
-         </form>
+     <main>
+       <div class="materialContainer">
+          <div class="box">
+            <form class="" action="" method="post" autocomplete="off">
+             <div class="title">Registrazione</div>
+             <div class="input">
+               <input name="remail" type="email" placeholder="Email" class="validate">
+             </div>
+             <div class="input">
+               <input name="regpass" type="password" placeholder="Password" class="validate">
+             </div>
+             <div class="input">
+               <input name="reregpass" type="password" placeholder="Ripeti Password" class="validate">
+             </div>
+             <div class="button login">
+                <button type="submit"><span>Registrati</span><i class="fa fa-check"></i></button>
+             </div>
+             <div class="help">
+               <?php
+                 echo "<a href='' class=" . "wrong-use" . ">" . $errorReg . "</a>"
+                ?>
+               <a href="login.php" class="nuovo">Hai già un'account? Accedi.</a>
+             </div>
+           </form>
+         </div>
        </div>
-     </div>
+     </main>
+
      <script src="js/jquery.min.js"></script>
      <script src="js/materialize.min.js"></script>
      <script src="js/main.js"></script>

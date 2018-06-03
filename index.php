@@ -250,7 +250,7 @@
         <li><a href="res/logout.php">Logout</a></li>
       </ul>
     </header>
-
+    <main>
       <div id="main" class="">
         <div class="row">
           <div id="options" class="col s12 m12 l3 hide-on-med-and-down">
@@ -293,6 +293,8 @@
           </div>
         </div>
       </div>
+    </main>
+
     <!--  Scripts-->
     <script src="js/jquery.min.js"></script>
     <script src="js/materialize.min.js"></script>

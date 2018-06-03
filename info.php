@@ -96,60 +96,61 @@
     </ul>
   </header>
 
-
-  <div class="container">
-    <div class="row">
-      <h1 class="center-align">Indicizzazione azienda</h1>
-      <div class="indicizzazione">
-        <form class="col s12" action="res/save.php" method="post">
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="nome_azienda" type="text" name="ragione" class="validate" value="<?php echo $result['ragione'] ?>">
-              <label for="first_name">Nome azienda</label>
+  <main>
+    <div class="container">
+      <div class="row">
+        <h1 class="center-align">Indicizzazione azienda</h1>
+        <div class="indicizzazione">
+          <form class="col s12" action="res/save.php" method="post">
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="nome_azienda" type="text" name="ragione" class="validate" value="<?php echo $result['ragione'] ?>">
+                <label for="first_name">Nome azienda</label>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="sitoweb" type="text" name="sitoweb" class="validate" value="<?php echo $result['sitoweb'] ?>">
-              <label for="sitoweb">Sitoweb</label>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="sitoweb" type="text" name="sitoweb" class="validate" value="<?php echo $result['sitoweb'] ?>">
+                <label for="sitoweb">Sitoweb</label>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s6">
-              <input id="email" type="email" name="email" class="validate" value="<?php echo $result['email'] ?>">
-              <label for="email">Email</label>
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="email" type="email" name="email" class="validate" value="<?php echo $result['email'] ?>">
+                <label for="email">Email</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="phone" name="telefono" type="text" class="validate" value="<?php echo $result['telefono'] ?>">
+                <label for="phone">Telefono</label>
+              </div>
             </div>
-            <div class="input-field col s6">
-              <input id="phone" name="telefono" type="text" class="validate" value="<?php echo $result['telefono'] ?>">
-              <label for="phone">Telefono</label>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="desc_azienda" type="text" name="card_info" class="validate" value="<?php echo $result['card_info'] ?>">
+                <label for="desc_azienda">Brevi informazioni relative all'azienda</label>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="desc_azienda" type="text" name="card_info" class="validate" value="<?php echo $result['card_info'] ?>">
-              <label for="desc_azienda">Brevi informazioni relative all'azienda</label>
+            <div class="row">
+              <div class="input-field col s12">
+                <select name="tipoazienda">
+                  <option value="" disabled selected>Scegli la tipologia di azienda</option>
+                  <?php loadTipiaziende(); ?>
+                </select>
+                <label>Tipologia Azienda</label>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <select name="tipoazienda">
-                <option value="" disabled selected>Scegli la tipologia di azienda</option>
-                <?php loadTipiaziende(); ?>
-              </select>
-              <label>Tipologia Azienda</label>
+            <div class="row center">
+              <div class="input-field col s12">
+                <button class="btn waves-effect waves-light center-align" type="submit" name="action">Aggiorna
+                  <i class="material-icons right">send</i>
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="row center">
-            <div class="input-field col s12">
-              <button class="btn waves-effect waves-light center-align" type="submit" name="action">Aggiorna
-                <i class="material-icons right">send</i>
-              </button>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 
   <script src="js/jquery.min.js"></script>
   <script src="js/materialize.min.js"></script>

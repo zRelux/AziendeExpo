@@ -76,33 +76,33 @@
     </ul>
   </header>
 
-
-  <div class="container">
-      <div class="row">
-        <h1 class="center-align">Pubblicizza la tua azienda!</h1>
-        <input type="hidden" id="email" value="<?php echo Encryption::decrypt($_SESSION['user']); ?>">
-        <div class="indicizzazione">
-          <div class="row">
-                <div class="row">
-                  <div class="row center">
-                    <h5>Rendi la tua azienda la piu vista per un'intera settimana!!
-                        Non peredere questa occasione a solo 5€!</h5>
-                  </div>
+  <main>
+    <div class="container">
+        <div class="row">
+          <h1 class="center-align">Pubblicizza la tua azienda!</h1>
+          <input type="hidden" id="email" value="<?php echo Encryption::decrypt($_SESSION['user']); ?>">
+          <div class="indicizzazione">
+            <div class="row">
                   <div class="row">
-                    <div class="col s12">
-                      <p class="flow-text">Il tuo bussines verrà visto sempre da chiunque non perdere questa occasione!!<br>
-                    A solo 5€ potrai rendere la tua azienda più visibile a tutti!</p>
+                    <div class="row center">
+                      <h5>Rendi la tua azienda la piu vista per un'intera settimana!!
+                          Non peredere questa occasione a solo 5€!</h5>
                     </div>
-                  </div>
-                  <div class="center">
-                    <div id="paypal-button"></div>
-                  </div>
-            </div>
+                    <div class="row">
+                      <div class="col s12">
+                        <p class="flow-text">Il tuo bussines verrà visto sempre da chiunque non perdere questa occasione!!<br>
+                      A solo 5€ potrai rendere la tua azienda più visibile a tutti!</p>
+                      </div>
+                    </div>
+                    <div class="center">
+                      <div id="paypal-button"></div>
+                    </div>
+              </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
+  </main>
   <script src="js/jquery.min.js"></script>
   <script src="js/materialize.min.js"></script>
   <script src="js/main.js"></script>

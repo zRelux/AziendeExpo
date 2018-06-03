@@ -81,15 +81,17 @@
       </ul>
     </header>
 
+    <main>
+      <div class="container">
+        <div class="row">
+          <div id="chartContainer" class="col s12">
+            <canvas id="mycanvas"></canvas>
+          </div>
 
-    <div class="container">
-      <div class="row">
-        <div id="chartContainer" class="col s12">
-          <canvas id="mycanvas"></canvas>
         </div>
-
       </div>
-    </div>
+    </main>
+
 
     <!--  Scripts-->
     <script src="js/jquery.min.js"></script>
