@@ -1,6 +1,9 @@
 <?php
   require "res/sec.php";
   session_start();
+  if(!isset($_SESSION['user']) || empty($_SESSION['user'])){
+    header("location: index.php");
+  }
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,25 +78,26 @@
 
 
   <div class="container">
-    <div class="row">
-      <h1 class="center-align">Pubblicizza la tua azienda!</h1>
-      <div class="indicizzazione">
-        <div class="row">
-              <div class="row">
-                <div class="row center">
-                  <h5>Rendi la tua azienda la piu vista per un'intera settimana!!
-                      Non peredere questa occasione a solo 5€!</h5>
-                </div>
+      <div class="row">
+        <h1 class="center-align">Pubblicizza la tua azienda!</h1>
+        <div class="indicizzazione">
+          <div class="row">
                 <div class="row">
-                  <div class="col s12">
-                    <p class="flow-text">Il tuo bussines verrà visto sempre da chiunque non perdere questa occasione!!<br>
-                  A solo 5€ potrai rendere la tua azienda più visibile a tutti!</p>
+                  <div class="row center">
+                    <h5>Rendi la tua azienda la piu vista per un'intera settimana!!
+                        Non peredere questa occasione a solo 5€!</h5>
                   </div>
-                </div>
-                <div class="center">
-                  <div id="paypal-button"></div>
-                </div>
-          </div>
+                  <div class="row">
+                    <div class="col s12">
+                      <p class="flow-text">Il tuo bussines verrà visto sempre da chiunque non perdere questa occasione!!<br>
+                    A solo 5€ potrai rendere la tua azienda più visibile a tutti!</p>
+                    </div>
+                  </div>
+                  <div class="center">
+                    <div id="paypal-button"></div>
+                  </div>
+            </div>
+        </div>
       </div>
     </div>
   </div>
@@ -130,38 +134,53 @@
 
           onAuthorize: function(data, actions) {
               return actions.payment.execute().then(function(payment) {
-                for (i = 0; i < data.length; i++)
-                  console.log((i+1) + ": " + data[i]);
+                /*$.ajax({
+                  url: 'res/payments.php',
+                  type: 'POST',
+                  data: {
+                    email:
+                  },
+                  dataType: "json",
+                  success: function(result) {
+
+                  },
+
+                  error: function(data) {
+                    console.log(data);
+                  }
+
+                });*/
               });
           }
 
       }, '#paypal-button');
   </script>
-</body>
-<footer class="page-footer blue lighten-1">
-  <div class="container">
-    <div class="row center">
-      <div class="col l4 s12">
-        <h5 class="white-text">Locazione</h5>
-        <p class="grey-text text-lighten-4">Lucca - Italia</p>
-      </div>
-      <div class="col l4 s12">
-        <h5 class="white-text">Social</h5>
-        <a href="https://facebook.com/aziende.expo" target="_blank"><img src="https://png.icons8.com/material/50/000000/facebook.png"></a>
-        <a href="https://twitter.com/aziendeexpo" target="_blank"><img src="https://png.icons8.com/metro/50/000000/twitter.png"></a>
-        <a href="https://instagram.com/aziendeexpo" target="_blank"><img src="https://png.icons8.com/ios-glyphs/50/000000/instagram-new.png"></a>
-      </div>
-      <div class="col l4 s12">
-        <h5 class="white-text">Contatti</h5>
-        <p class="grey-text text-lighten-4"><a href="mailto:leonard.drici@gmail.com" class="white-text">leonard.drici@gmail.com</a></p>
-        <p class="grey-text text-lighten-4"><a href="mailto:help@aziendeexpo.it" class="white-text">help@aziendeexpo.it</a></p>
-      </div>
-    </div>
-  </div>
-  <div class="footer-copyright">
+  <footer class="page-footer blue lighten-1">
     <div class="container">
-      © 2018 Copyright AziendeExpo
+      <div class="row center">
+        <div class="col l4 s12">
+          <h5 class="white-text">Locazione</h5>
+          <p class="grey-text text-lighten-4">Lucca - Italia</p>
+        </div>
+        <div class="col l4 s12">
+          <h5 class="white-text">Social</h5>
+          <a href="https://facebook.com/aziende.expo" target="_blank"><img src="https://png.icons8.com/material/50/000000/facebook.png"></a>
+          <a href="https://twitter.com/aziendeexpo" target="_blank"><img src="https://png.icons8.com/metro/50/000000/twitter.png"></a>
+          <a href="https://instagram.com/aziendeexpo" target="_blank"><img src="https://png.icons8.com/ios-glyphs/50/000000/instagram-new.png"></a>
+        </div>
+        <div class="col l4 s12">
+          <h5 class="white-text">Contatti</h5>
+          <p class="grey-text text-lighten-4"><a href="mailto:leonard.drici@gmail.com" class="white-text">leonard.drici@gmail.com</a></p>
+          <p class="grey-text text-lighten-4"><a href="mailto:help@aziendeexpo.it" class="white-text">help@aziendeexpo.it</a></p>
+        </div>
+      </div>
     </div>
-  </div>
-</footer>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2018 Copyright AziendeExpo
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>
