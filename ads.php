@@ -146,11 +146,11 @@
                   dataType: "json",
                   success: function(result) {
                     console.log(result);
-                    redirect("payment-successful.html");
+                    //redirect("payment-successful.html");
                   },
 
                   error: function(data) {
-                    redirect("payment-cancelled.html");
+                    //redirect("payment-cancelled.html");
                   }
 
                 });
