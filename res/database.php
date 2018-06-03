@@ -399,10 +399,9 @@
       $stmt->execute();
       $result = $stmt->get_result();
       $datacontrollo = date('d');
-      
+
       while($row = $result->fetch_assoc()){
         $datapagamento = $row['createdtime'];
-
         $id = $row[];
         if($datacontrollo != $datapagamento){
           $sql = "UPDATE azienda SET sponsorizza=sponsorizza-1 WHERE id=?";
@@ -431,7 +430,7 @@
       $stmt = $conn->prepare($sql);
       $data = date("W/Y");
       $stmt->bind_param("s", $data);
-      $stmt->execute();
+      $stmt->execute();+
       $result = $stmt->get_result();
       $conn->close();
 
