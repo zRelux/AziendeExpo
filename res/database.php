@@ -132,8 +132,9 @@
         $sitoweb = "https:\\sitoweb.it";
         $sede = "Lucca/IT";
         $nata = "12/10/1999";
+		$sponsorizzata = 0;
 
-        $stmt->bind_param("ssssssssissssssssi", $nome, $campo1, $nome_campo1, $campo2, $nome_campo2, $campo3, $nome_campo3, $card_info, $telefono, $email, $info, $sitoweb, $sede, $nata, $campo2, $campo2, $info, $id);
+        $stmt->bind_param("ssssssssissssssssii", $nome, $campo1, $nome_campo1, $campo2, $nome_campo2, $campo3, $nome_campo3, $card_info, $telefono, $email, $info, $sitoweb, $sede, $nata, $campo2, $campo2, $info, $sponsorizzata, $id);
         if ($stmt->execute() === TRUE) {
           $conn->close();
           header("location: profile.php?find=true");
