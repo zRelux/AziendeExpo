@@ -102,6 +102,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/materialize.min.css" rel="stylesheet">
     <link href="css/stileProfilo.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/modal.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
 
   </head>
@@ -166,6 +167,7 @@
       }
       ?>
 
+
         <!-- START MAIN -->
         <div id="main">
           <div class="wrapper">
@@ -173,7 +175,7 @@
               <div id="profile-page" class="section">
                 <div class="card">
                   <div class="card-image">
-                    <a href="<?php if($result['backgroundimage'] != null && $result['backgroundimage'] != " 20 ") echo $result['backgroundimage']; else echo 'images/background2.jpg' ?>"><img class="background-image" src="<?php if($result['backgroundimage'] != null && $result['backgroundimage'] != "20") echo $result['backgroundimage']; else echo 'images/background2.jpg' ?>" alt="user background" height="250px"></a>
+                    <a href="<?php if($result['backgroundimage'] != null && $result['backgroundimage'] != " 20 ") echo $result['backgroundimage']; else echo 'images/background2.jpg' ?>"><img id="myImg" class="background-image" src="<?php if($result['backgroundimage'] != null && $result['backgroundimage'] != "20") echo $result['backgroundimage']; else echo 'images/background2.jpg' ?>" alt="user background" height="250px"></a>
                     <form enctype="multipart/form-data" method="POST" action="./res/upload.php">
                       <input type="file" id="selectedFile1" name="backgroundimage" maxlength='1' accept="image/jpg, image/png, image/jpeg" onchange="form.submit()" style="display: none;" />
                       <a class="btn-floating btn-large waves-effect waves-light btn-upload immagine" onclick="document.getElementById('selectedFile1').click();"><i class="material-icons">add</i></a>
@@ -244,6 +246,18 @@
                     ?>
                     </div>
                   </div>
+                </div>
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                <!-- The Close Button -->
+                <span class="close">&times;</span>
+
+                <!-- Modal Content (The Image) -->
+                <img class="modal-content" id="img01">
+
+                <!-- Modal Caption (Image Text) -->
+                <div id="caption"></div>
                 </div>
                 <div class="card light-blue lighten-5 hoverable">
                   <div class="card-content black-text">
@@ -472,6 +486,28 @@
       <script src="js/materialize.min.js"></script>
       <script src="js/main.js"></script>
       <script src="js/sweetalert.min.js"></script>
+      <script type="text/javascript">
+      // Get the modal
+      var modal = document.getElementById('myModal');
+
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = document.getElementById('myImg');
+      var modalImg = document.getElementById("img01");
+      var captionText = document.getElementById("caption");
+      img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+      }
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+      modal.style.display = "none";
+      }
+      </script>
       <footer class="page-footer blue lighten-1">
         <div class="container">
           <div class="row center">
