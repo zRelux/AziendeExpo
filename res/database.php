@@ -77,12 +77,12 @@
       $stmt = $conn->prepare($sql);
       $stmt->bind_param("ss", $email, $pass);
       $stmt->execute();
+      $result = $stmt->get_result();
+      $row = $result->fetch_assoc();
       $stmt->store_result();
 
 
-      if($stmt->num_rows > 0){
-        $result = $stmt->get_result();
-        $row = $result->fetch_assoc();        
+      if($stmt->num_rows > 0){      
         if($row['active'] == 1){
           return true;
         }else{
