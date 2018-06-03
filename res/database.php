@@ -402,7 +402,7 @@
 
       while($row = $result->fetch_assoc()){
         $datapagamento = $row['createdtime'];
-        $id = $row[];
+        $id = $row['compratore'];
         if($datacontrollo != $datapagamento){
           $sql = "UPDATE azienda SET sponsorizza=sponsorizza-1 WHERE id=?";
           $stmt = $conn->prepare($sql);
