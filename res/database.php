@@ -411,10 +411,10 @@
           $stmt->bind_param("i", $id);
 
           $stmt->execute();
-          $result = $stmt->get_result();
-          $azienda = $result->fetch_assoc()
+          $resulto = $stmt->get_result();
+          $azienda = $resulto->fetch_assoc()
           if($azienda['sponsorizzata'] > 0){
-            $sponsorizzata = $row['sponsorizzata'] - 1;
+            $sponsorizzata = $azienda['sponsorizzata'] - 1;
           }else{
             $sponsorizzata = 0;
           }
