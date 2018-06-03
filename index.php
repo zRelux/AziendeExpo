@@ -222,9 +222,9 @@
               <li>
                 <form id="ricercaAz" method="get" action="index.php">
                   <div class="input-field">
-                    <i class="material-icons prefix">search</i>
-                    <input id="ricercaAziende" type="text" class="validate" name="data" onkeydown="search(this)">
-                    <label for="ricercaAziende">Cerca..-</label>
+                    <i class="material-icons prefix black-text">search</i>
+                    <input id="ricercaAziende" type="text" class="validate black-text" name="data" onkeydown="search(this)">
+                    <label for="ricercaAziende" class="black-text">Cerca..-</label>
                     <!--<input id="" type="text" placeholder="Cerca..."  >onkeyup="ricerca()"-->
                   </div>
                 </form>
