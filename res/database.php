@@ -403,7 +403,7 @@
       while($row = $result->fetch_assoc()){
         $datapagamento = $row['createdtime'];
         $id = $row['compratore'];
-        
+
         if($datacontrollo != $datapagamento){
           $sql = "UPDATE azienda SET sponsorizzata=sponsorizzata-1 WHERE id=?";
           $stmt = $conn->prepare($sql);
@@ -431,7 +431,7 @@
       $stmt = $conn->prepare($sql);
       $data = date("W/Y");
       $stmt->bind_param("s", $data);
-      $stmt->execute();+
+      $stmt->execute();
       $result = $stmt->get_result();
       $conn->close();
 
