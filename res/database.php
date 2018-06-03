@@ -79,10 +79,9 @@
       $stmt->execute();
       $result = $stmt->get_result();
       $row = $result->fetch_assoc();
-      $stmt->store_result();
 
 
-      if($stmt->num_rows > 0){      
+      if($result->num_rows > 0){      
         if($row['active'] == 1){
           return true;
         }else{
