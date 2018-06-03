@@ -79,7 +79,6 @@
       <h1 class="center-align">Pubblicizza la tua azienda!</h1>
       <div class="indicizzazione">
         <div class="row">
-            <form class="paypal col s12" action="/res/payments.php" method="post" id="paypal_form">
               <div class="row">
                 <div class="row center">
                   <h5>Rendi la tua azienda la piu vista per un'intera settimana!!
@@ -91,20 +90,7 @@
                   A solo 5€ potrai rendere la tua azienda più visibile a tutti!</p>
                   </div>
                 </div>
-            		<input type="hidden" name="first_name" value="<?php echo Encryption::decrypt($_SESSION['user']); ?>"  />
-                <input type="hidden" name="item_number" value="123456"/>
-                <input type="hidden" name="cmd" value="_xclick" />
-                <input type="hidden" name="no_note" value="1" />
-                <input type="hidden" name="lc" value="IT" />
-                <input type="hidden" name="currency_code" value="EUR" />
-                <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_LG.gif:NonHostedGuest" />
-                <input type="hidden" name="payer_email" value="<?php echo Encryption::decrypt($_SESSION['user']);  ?>" />
-                <div class="row center">
-                  <button class="btn waves-effect waves-light" type="submit" name="submit">Paga con PayPaL
-                    <i class="material-icons right">send</i>
-                  </button>
-                </div>
-            </form>
+            		<div id="paypal-button"></div>
           </div>
       </div>
     </div>
@@ -114,6 +100,41 @@
   <script src="js/materialize.min.js"></script>
   <script src="js/main.js"></script>
 
+  <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+  <script>
+      paypal.Button.render({
+
+          env: 'sandbox', // Or 'sandbox'
+
+          client: {
+              sandbox:    'AR9Vb6n96kpAWztYoQbZazEZS4VgiiuhntHmyssKJ1V2TeWltykpgBqFBUk7Qdd7ukkQOznc63fvIVP6',
+              production: 'AToPN6RrOd93N2WcJDg0uj27Ff7vkHjw1GZi2p6uj3VfrA-CeqY2yIG3fB_Nlj-1rNU26z0UX0KhG5XA'
+          },
+
+          commit: true, // Show a 'Pay Now' button
+
+          payment: function(data, actions) {
+              return actions.payment.create({
+                  payment: {
+                      transactions: [
+                          {
+                              amount: { total: '5.00', currency: 'EUR' }
+                          }
+                      ]
+                  }
+              });
+          },
+
+          onAuthorize: function(data, actions) {
+              return actions.payment.execute().then(function(payment) {
+                for (i = 0; i < array.length; i++)
+                  console.log((i+1) + ": " + array[i]);
+              });
+          }
+
+      }, '#paypal-button');
+  </script>
 </body>
 <footer class="page-footer blue lighten-1">
   <div class="container">
