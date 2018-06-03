@@ -27,11 +27,13 @@
       $error = 'Email non valida';
 
     }else if($db->checkLogin($email, $pass) == true){
-
-      $_SESSION['user'] = $email;
-      $_SESSION['password'] = $pass;
-      header("Location: profile.php?find=true");
-
+      if($db->checkActive($email, $pass) == true){
+        $_SESSION['user'] = $email;
+        $_SESSION['password'] = $pass;
+        header("Location: profile.php?find=true");
+      }else{
+        $error = "Email non verificata";
+      }
     }else{
 
       $error = "Email o Password errati";

@@ -67,6 +67,30 @@
       }
     }
 
+    function checkActive($email, $pass){
+      $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
+
+      $email = $conn->real_escape_string($email);
+      $pass = $conn->real_escape_string($pass);
+      $sql = "SELECT * FROM users WHERE username=? AND password=?";
+
+      $stmt = $conn->prepare($sql);
+      $stmt->bind_param("ss", $email, $pass);
+      $stmt->execute();
+      $stmt->store_result();
+
+
+      if($stmt->num_rows > 0){
+        if($row['active'] == 1){
+          return true;
+        }else{
+          return false;
+        }
+      }else{
+        return false;
+      }
+    }
+
     function checkEmail($email){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
 
@@ -85,6 +109,7 @@
         return false;
       }
     }
+
 
     function addUser($email, $password){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
@@ -116,7 +141,7 @@
 
         $sql = "INSERT INTO azienda VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         $stmt = $conn->prepare($sql);
-        
+
         $id = $row['id'];
         $nome = "Nome azienda";
         $campo1 = "10";
