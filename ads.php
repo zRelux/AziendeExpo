@@ -138,7 +138,7 @@
                   url: 'res/payments.php',
                   type: 'POST',
                   data: {
-                    email: <?php echo Encryption::decrypt($_SESSION['user']); ?>
+                    email: 
                   },
                   dataType: "json",
                   success: function(result) {
