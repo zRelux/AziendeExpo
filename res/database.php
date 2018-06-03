@@ -127,14 +127,16 @@
         $nome_campo3 = "Investiti";
         $card_info = "Informazioni azienda";
         $telefono = 2943058151;
+        $immagine = "";
         $email = "info@azienda.com";
         $info = "Informazioni azienda";
-        $sitoweb = "https:\\sitoweb.it";
+        $sitoweb = "https://sitoweb.it";
+        $tipo = "Abbigliamento, Calzature, Accessori";
         $sede = "Lucca/IT";
         $nata = "12/10/1999";
-		$sponsorizzata = 0;
+		    $sponsorizzata = 0;
 
-        $stmt->bind_param("ssssssssissssssssii", $nome, $campo1, $nome_campo1, $campo2, $nome_campo2, $campo3, $nome_campo3, $card_info, $telefono, $email, $info, $sitoweb, $sede, $nata, $campo2, $campo2, $info, $sponsorizzata, $id);
+        $stmt->bind_param("ssssssssissssssssii", $nome, $campo1, $nome_campo1, $campo2, $nome_campo2, $campo3, $nome_campo3, $card_info, $telefono, $email, $info, $sitoweb, $sede, $nata, $immagine, $immagine, $tipo, $sponsorizzata, $id);
         if ($stmt->execute() === TRUE) {
           $conn->close();
           header("location: profile.php?find=true");
