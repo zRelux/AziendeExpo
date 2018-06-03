@@ -404,7 +404,7 @@
         $datapagamento = $row['createdtime'];
         $id = $row['compratore'];
         if($datacontrollo != $datapagamento){
-          $sql = "UPDATE azienda SET sponsorizza=sponsorizza-1 WHERE id=?";
+          $sql = "UPDATE azienda SET sponsorizzata=sponsorizzata-1 WHERE id=?";
           $stmt = $conn->prepare($sql);
           $stmt->bind_param("i", $id);
 
