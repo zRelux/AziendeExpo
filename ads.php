@@ -143,6 +143,7 @@
                   },
                   dataType: "json",
                   success: function(result) {
+                    console.log(result);
                     redirect("payment-successful.html");
                   },
 
