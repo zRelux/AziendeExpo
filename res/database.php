@@ -424,6 +424,12 @@
           $stmt->bind_param("ii", $sponsorizzata, $id);
 
           $stmt->execute();
+
+          $sql = "UPDATE payments SET createdtime=? WHERE id=?";
+          $stmt = $conn->prepare($sql);
+          $stmt->bind_param("si", $datacontrollo, $idpayment);
+
+          $stmt->execute();
         }
       }
 
