@@ -406,7 +406,7 @@
         if($datacontrollo != $datapagamento){
           $sql = "UPDATE azienda SET sponsorizza=sponsorizza-1 WHERE id=?";
           $stmt = $conn->prepare($sql);
-          $stmt->bind_param("i", $row['id']);
+          $stmt->bind_param("i", $id);
 
           $stmt->execute();
         }
