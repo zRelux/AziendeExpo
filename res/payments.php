@@ -101,7 +101,12 @@ if (!isset($_POST["txn_id"]) && !isset($_POST["txn_type"])){
 					$orderid = updatePayments($data);
 
 					if ($orderid) {
-						// Payment has been made & successfully inserted into the Database
+            $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+            $txt = "sponsorizza\n";
+            fwrite($myfile, $txt);
+            $txt = "Jane Doe\n";
+            fwrite($myfile, $txt);
+            fclose($myfile);
 					} else {
 						// Error inserting into DB
 						// E-mail admin or alert user
