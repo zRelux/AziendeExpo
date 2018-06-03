@@ -2,7 +2,7 @@
   require "res/sec.php";
   session_start();
   if(!isset($_SESSION['user']) || empty($_SESSION['user'])){
-    header("location: index.php");
+    header("location: login.php");
   }
  ?>
 <!DOCTYPE html>
@@ -134,22 +134,22 @@
 
           onAuthorize: function(data, actions) {
               return actions.payment.execute().then(function(payment) {
-                /*$.ajax({
+                $.ajax({
                   url: 'res/payments.php',
                   type: 'POST',
                   data: {
-                    email:
+                    email: <?php echo Encryption::decrypt($_SESSION['user']); ?>
                   },
                   dataType: "json",
                   success: function(result) {
-
+                    redirect("payment-successful.html");
                   },
 
                   error: function(data) {
-                    console.log(data);
+                    redirect("payment-cancelled.html");
                   }
 
-                });*/
+                });
               });
           }
 
