@@ -165,11 +165,27 @@
 
     }
 
+
     function getActive($email){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
       $email = $conn->real_escape_string($email);
 
       $sql = "SELECT active FROM users WHERE username=?";
+
+      $stmt = $conn->prepare($sql);
+      $stmt->bind_param("s", $email);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $conn->close();
+
+      return $result->fetch_assoc();
+    }
+
+    function getHash($email){
+      $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
+      $email = $conn->real_escape_string($email);
+
+      $sql = "SELECT hash FROM users WHERE username=?";
 
       $stmt = $conn->prepare($sql);
       $stmt->bind_param("s", $email);
