@@ -1,5 +1,6 @@
 <?php
-
+  require "res/sec.php";
+  session_start();
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,14 +91,14 @@
                   A solo 5€ potrai rendere la tua azienda più visibile a tutti!</p>
                   </div>
                 </div>
-            		<input type="hidden" name="first_name" value="<?php require "res/sec.php"; echo Encryption::decrypt($_SESSION['user']); ?>"  />
+            		<input type="hidden" name="first_name" value="<?php echo Encryption::decrypt($_SESSION['user']); ?>"  />
                 <input type="hidden" name="item_number" value="123456"/>
                 <input type="hidden" name="cmd" value="_xclick" />
                 <input type="hidden" name="no_note" value="1" />
                 <input type="hidden" name="lc" value="IT" />
                 <input type="hidden" name="currency_code" value="EUR" />
                 <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_LG.gif:NonHostedGuest" />
-                <input type="hidden" name="payer_email" value="<?php require "res/sec.php"; echo Encryption::decrypt($_SESSION['user']);  ?>" />
+                <input type="hidden" name="payer_email" value="<?php echo Encryption::decrypt($_SESSION['user']);  ?>" />
                 <div class="row center">
                   <button class="btn waves-effect waves-light" type="submit" name="submit">Paga con PayPaL
                     <i class="material-icons right">send</i>

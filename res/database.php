@@ -199,7 +199,6 @@
 
 
 
-
     //funzione per ottenere l'hash
 
     function getHash($email){
