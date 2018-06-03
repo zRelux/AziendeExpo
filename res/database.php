@@ -400,7 +400,16 @@
       $result = $stmt->get_result();
 
       while($row = $result->fetch_assoc()){
-          echo $row['createdtime'];
+        $datapagamento = $row['createdtime'];
+        $datacontrollo = date('d');
+        $id = $row[];
+        if($datacontrollo != $datapagamento){
+          $sql = "UPDATE azienda SET sponsorizza=sponsorizza-1 WHERE id=?";
+          $stmt = $conn->prepare($sql);
+          $stmt->bind_param("i", $row['id']);
+
+          $stmt->execute();
+        }
       }
 
 
@@ -624,7 +633,7 @@
 
       $sql = "INSERT INTO payments (compratore, prezzo, stato, itemid, createdtime) VALUES (?,?,?,?,?)";
       $stmt = $conn->prepare($sql);
-      $data =  date('d-m');
+      $data =  date('d');
       $stato = "verificato";
       $prezzo = 5.00;
       $itemid = 1;
