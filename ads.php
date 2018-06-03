@@ -139,7 +139,7 @@
                   url: 'res/payments.php',
                   type: 'POST',
                   data: {
-                    email:
+                    email: document.getElementById('email').value
                   },
                   dataType: "json",
                   success: function(result) {
