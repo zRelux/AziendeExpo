@@ -222,13 +222,8 @@
               <li>
                 <form id="ricercaAz" method="get" action="index.php">
                   <div class="input-field">
-                    <div class="col s2">
-                      <button class="waves-effect waves-teal black-text" type="submit"><i class="material-icons right">search</i></button>
-                    </div>
-                    <div class="col s10">
-                      <input id="ricercaAziende" type="text" class="black-text" name="data" onkeydown="search(this)">
-                    </div>
-                    <!--<input id="" type="text" placeholder="Cerca..."  >onkeyup="ricerca()"-->
+                    <i class="black-text material-icons prefix">search</i>
+                    <input id="ricercaAziende" type="text" placeholder="Cerca..." name="data" onkeydown="search(this)" ><!--onkeyup="ricerca()"-->
                   </div>
                 </form>
               </li>
