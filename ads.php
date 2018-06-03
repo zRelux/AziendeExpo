@@ -112,6 +112,7 @@
   <script src="js/materialize.min.js"></script>
   <script src="js/main.js"></script>
   <footer class="page-footer blue lighten-1">
+    <div class="container">
       <div class="row center">
         <div class="col l4 s12">
           <h5 class="white-text">Locazione</h5>
@@ -134,6 +135,7 @@
       <div class="container">
         © 2018 Copyright AziendeExpo
       </div>
+    </div>
   </footer>
 </body>
 
