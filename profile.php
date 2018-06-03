@@ -175,7 +175,7 @@
               <div id="profile-page" class="section">
                 <div class="card">
                   <div class="card-image">
-                    <a href="<?php //if($result['backgroundimage'] != null && $result['backgroundimage'] != " 20 ") echo $result['backgroundimage']; else echo 'images/background2.jpg' ?>"><img id="myImg" class="background-image" src="<?php if($result['backgroundimage'] != null && $result['backgroundimage'] != "20") echo $result['backgroundimage']; else echo 'images/background2.jpg' ?>" alt="user background" height="250px"></a>
+                    <a ><img id="myImg" class="background-image" src="<?php if($result['backgroundimage'] != null && $result['backgroundimage'] != "20") echo $result['backgroundimage']; else echo 'images/background2.jpg' ?>" alt="user background" height="250px"></a>
                     <form enctype="multipart/form-data" method="POST" action="./res/upload.php">
                       <input type="file" id="selectedFile1" name="backgroundimage" maxlength='1' accept="image/jpg, image/png, image/jpeg" onchange="form.submit()" style="display: none;" />
                       <a class="btn-floating btn-large waves-effect waves-light btn-upload immagine" onclick="document.getElementById('selectedFile1').click();"><i class="material-icons">add</i></a>
