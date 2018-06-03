@@ -470,6 +470,7 @@
       <script src="js/jquery.min.js"></script>
       <script src="js/materialize.min.js"></script>
       <script src="js/main.js"></script>
+      <script src="js/sweetalert.min.js"></script>
       <footer class="page-footer blue lighten-1">
         <div class="container">
           <div class="row center">
