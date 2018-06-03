@@ -111,32 +111,32 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/materialize.min.js"></script>
   <script src="js/main.js"></script>
-  <footer class="page-footer blue lighten-1">
-    <div class="container">
-      <div class="row center">
-        <div class="col l4 s12">
-          <h5 class="white-text">Locazione</h5>
-          <p class="grey-text text-lighten-4">Lucca - Italia</p>
-        </div>
-        <div class="col l4 s12">
-          <h5 class="white-text">Social</h5>
-          <a href="https://facebook.com/aziende.expo" target="_blank"><img src="https://png.icons8.com/material/50/000000/facebook.png"></a>
-          <a href="https://twitter.com/aziendeexpo" target="_blank"><img src="https://png.icons8.com/metro/50/000000/twitter.png"></a>
-          <a href="https://instagram.com/aziendeexpo" target="_blank"><img src="https://png.icons8.com/ios-glyphs/50/000000/instagram-new.png"></a>
-        </div>
-        <div class="col l4 s12">
-          <h5 class="white-text">Contatti</h5>
-          <p class="grey-text text-lighten-4"><a href="mailto:leonard.drici@gmail.com" class="white-text">leonard.drici@gmail.com</a></p>
-          <p class="grey-text text-lighten-4"><a href="mailto:help@aziendeexpo.it" class="white-text">help@aziendeexpo.it</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-        © 2018 Copyright AziendeExpo
-      </div>
-    </div>
-  </footer>
-</body>
 
+</body>
+<footer class="page-footer blue lighten-1">
+  <div class="container">
+    <div class="row center">
+      <div class="col l4 s12">
+        <h5 class="white-text">Locazione</h5>
+        <p class="grey-text text-lighten-4">Lucca - Italia</p>
+      </div>
+      <div class="col l4 s12">
+        <h5 class="white-text">Social</h5>
+        <a href="https://facebook.com/aziende.expo" target="_blank"><img src="https://png.icons8.com/material/50/000000/facebook.png"></a>
+        <a href="https://twitter.com/aziendeexpo" target="_blank"><img src="https://png.icons8.com/metro/50/000000/twitter.png"></a>
+        <a href="https://instagram.com/aziendeexpo" target="_blank"><img src="https://png.icons8.com/ios-glyphs/50/000000/instagram-new.png"></a>
+      </div>
+      <div class="col l4 s12">
+        <h5 class="white-text">Contatti</h5>
+        <p class="grey-text text-lighten-4"><a href="mailto:leonard.drici@gmail.com" class="white-text">leonard.drici@gmail.com</a></p>
+        <p class="grey-text text-lighten-4"><a href="mailto:help@aziendeexpo.it" class="white-text">help@aziendeexpo.it</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © 2018 Copyright AziendeExpo
+    </div>
+  </div>
+</footer>
 </html>
