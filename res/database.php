@@ -80,13 +80,8 @@
       $result = $stmt->get_result();
       $row = $result->fetch_assoc();
 
-
-      if($result->num_rows > 0){      
-        if($row['active'] == 1){
-          return true;
-        }else{
-          return false;
-        }
+      if($row['active'] == 1){
+        return true;
       }else{
         return false;
       }
