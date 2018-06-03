@@ -24,7 +24,7 @@
           $db->setActive(Encryption::encrypt($_GET['email']));
           header('location: profile.php');
         }else{
-          header('location: index.php');
+          echo Encryption::encrypt($_GET['email']) . " " . $_GET['hash'] == $db->getHash($_GET['email'])['hash'];
         }
       }
   }else{
