@@ -607,9 +607,11 @@
       $sql = "INSERT INTO payments (compratore, prezzo, stato, itemid, createdtime) VALUES (?,?,?,?,?)";
       $stmt = $conn->prepare($sql);
       $data =  date('d-m');
+      $stato = "verificato";
       $prezzo = 5.00;
       $itemid = 1;
-      $stmt->bind_param("iisss", $row['id'], $prezzo, $stato, $itemid, $data);
+      $id = $row['id'];
+      $stmt->bind_param("iisss", $id, $prezzo, $stato, $itemid, $data);
 
       $stmt->execute();
       $conn->close();
