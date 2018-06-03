@@ -5,7 +5,6 @@
   include('res/database.php');
   include('res/sec.php');
   session_start();
-  echo Encryption::encrypt($_GET['email']) . " " . $_GET['hash'] == $db->getHash($_GET['email'])['hash'];
   if(!isset($_SESSION['db'])){
     $connessione = explode(",", file_get_contents('res/linfo.txt'));
     $servername = $connessione[0];

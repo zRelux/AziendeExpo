@@ -216,6 +216,8 @@
       return $result->fetch_assoc();
     }
 
+    
+
     function changePassword($email, $password){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
 
