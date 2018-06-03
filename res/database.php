@@ -644,14 +644,14 @@
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
       $row = $this->getId($username);
 
-      $sql = "INSERT INTO payments (compratore, prezzo, stato, itemid, createdtime) VALUES (?,?,?,?,?)";
+      $sql = "INSERT INTO payments (compratore, prezzo, stato, itemid, createdtime, datapagamento) VALUES (?,?,?,?,?,?)";
       $stmt = $conn->prepare($sql);
       $data =  date('d');
       $stato = "verificato";
       $prezzo = 5.00;
       $itemid = 1;
       $id = $row['id'];
-      $stmt->bind_param("iisss", $id, $prezzo, $stato, $itemid, $data);
+      $stmt->bind_param("iissss", $id, $prezzo, $stato, $itemid, $data, $data);
 
       $stmt->execute();
       $conn->close();
