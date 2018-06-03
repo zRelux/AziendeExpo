@@ -10,9 +10,9 @@
 
   // PayPal settings
   $paypal_email = 'aziendeexpo@gmail.com';
-  $return_url = 'http://mostralatuazienda.epizy.com/payment-successful.html';
-  $cancel_url = 'http://mostralatuazienda.epizy.com/payment-cancelled.html';
-  $notify_url = 'http://mostralatuazienda.epizy.com/res/payments.php';
+  $return_url = 'https://aziendeexpo.it/payment-successful.html';
+  $cancel_url = 'https://aziendeexpo.it/payment-cancelled.html';
+  $notify_url = 'https://aziendeexpo.it/res/payments.php';
 
   $item_name = "Pubblicità dell'azienda";
   $item_amount = 5.00;
@@ -48,7 +48,7 @@
   	//$querystring .= "&custom=".USERID;
 
   	// Redirect to paypal IPN
-  	header('location:https://ipnpb.sandbox.paypal.com/cgi-bin/webscr'.$querystring);
+  	header('location:https://sandbox.paypal.com/cgi-bin/webscr'.$querystring);
   	exit();
   } else {
   	// Response from Paypal
@@ -77,7 +77,7 @@
   	$header .= "Content-Type: application/x-www-form-urlencoded\r\n";
   	$header .= "Content-Length: " . strlen($req) . "\r\n\r\n";
 
-  	$fp = fsockopen ('ipnpb.sandbox.paypal.com/cgi-bin/webscr', 80, $errno, $errstr, 30);
+  	$fp = fsockopen ('sandbox.paypal.com/cgi-bin/webscr', 443, $errno, $errstr, 30);
 
   	if (!$fp) {
       fputs($fp, $header . $req);
