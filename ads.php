@@ -80,6 +80,7 @@
   <div class="container">
       <div class="row">
         <h1 class="center-align">Pubblicizza la tua azienda!</h1>
+        <input type="hidden" id="email" value="<?php echo Encryption::decrypt($_SESSION['user']); ?>">
         <div class="indicizzazione">
           <div class="row">
                 <div class="row">
@@ -138,7 +139,7 @@
                   url: 'res/payments.php',
                   type: 'POST',
                   data: {
-                    email: 
+                    email:
                   },
                   dataType: "json",
                   success: function(result) {
