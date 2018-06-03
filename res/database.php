@@ -605,7 +605,7 @@
 
       $sql = "INSERT INTO payments (compratore, prezzo, stato, itemid, createdtime) VALUES (?,?,?,?,?)";
       $stmt = $conn->prepare($sql);
-      $data =  date('d-m-Y H:i:s');
+      $data =  date('d-m');
       $prezzo = 5.00;
       $itemid = 1;
       $stmt->bind_param("sisss", $username, $prezzo, $stato, $itemid, $data);
@@ -620,7 +620,7 @@
 
       $sql = "UPDATE azienda SET sponsorizzata=? WHERE id=?";
       $stmt = $conn->prepare($sql);
-      $p = 1;
+      $p = 7;
       $stmt->bind_param("ii", $p, $row['id']);
 
       $stmt->execute();
