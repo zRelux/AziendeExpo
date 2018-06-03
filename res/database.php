@@ -81,6 +81,8 @@
 
 
       if($stmt->num_rows > 0){
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();        
         if($row['active'] == 1){
           return true;
         }else{
