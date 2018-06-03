@@ -403,11 +403,25 @@
       while($row = $result->fetch_assoc()){
         $datapagamento = $row['createdtime'];
         $id = $row['compratore'];
+        $idpayment = $row['id'];
 
         if($datacontrollo != $datapagamento){
-          $sql = "UPDATE azienda SET sponsorizzata=sponsorizzata-1 WHERE id=?";
+          $sql = "SELECT * FROM azienda WHERE id=?";
           $stmt = $conn->prepare($sql);
           $stmt->bind_param("i", $id);
+
+          $stmt->execute();
+          $result = $stmt->get_result();
+          $row = $result->fetch_assoc()
+          if($row['sponsorizzata'] > 0){
+            $sponsorizzata = $row['sponsorizzata'] - 1;
+          }else{
+            $sponsorizzata = 0;
+          }
+
+          $sql = "UPDATE azienda SET sponsorizzata=? WHERE id=?";
+          $stmt = $conn->prepare($sql);
+          $stmt->bind_param("ii", $sponsorizzata, $id);
 
           $stmt->execute();
         }
