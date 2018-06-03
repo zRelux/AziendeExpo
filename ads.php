@@ -142,7 +142,7 @@
                 };
                 var post = $.post("res/payments.php", data);
                 post.done(function(msg) {
-                  console.log(msg);
+                  redirect("payment-successful.html");
                 });
               });
           }
