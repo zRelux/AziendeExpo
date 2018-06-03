@@ -137,22 +137,12 @@
               return actions.payment.execute().then(function(payment) {
                 var em = document.getElementById('email').value;
                 console.log(em);
-                $.ajax({
-                  url: 'res/payments.php',
-                  type: 'POST',
-                  data: {
-                    email: em
-                  },
-                  dataType: "json",
-                  success: function(result) {
-                    console.log(result);
-                    //redirect("payment-successful.html");
-                  },
-
-                  error: function(data) {
-                    //redirect("payment-cancelled.html");
-                  }
-
+                var data = {
+                  email: em,
+                };
+                var post = $.post("res/payments.php", data);
+                post.done(function(msg) {
+                  console.log(msg);
                 });
               });
           }
