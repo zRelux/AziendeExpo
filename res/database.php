@@ -197,6 +197,11 @@
       return $result->fetch_assoc();
     }
 
+
+
+
+    //funzione per ottenere l'hash
+
     function getHash($email){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
       $email = $conn->real_escape_string($email);
