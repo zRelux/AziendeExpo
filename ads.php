@@ -90,7 +90,9 @@
                   A solo 5€ potrai rendere la tua azienda più visibile a tutti!</p>
                   </div>
                 </div>
-            		<div id="paypal-button"></div>
+                <div class="center">
+                  <div id="paypal-button"></div>
+                </div>
           </div>
       </div>
     </div>
@@ -128,8 +130,8 @@
 
           onAuthorize: function(data, actions) {
               return actions.payment.execute().then(function(payment) {
-                for (i = 0; i < array.length; i++)
-                  console.log((i+1) + ": " + array[i]);
+                for (i = 0; i < data.length; i++)
+                  console.log((i+1) + ": " + data[i]);
               });
           }
 
