@@ -398,10 +398,11 @@
       $stmt = $conn->prepare($sql);
       $stmt->execute();
       $result = $stmt->get_result();
-
+      $datacontrollo = date('d');
+      
       while($row = $result->fetch_assoc()){
         $datapagamento = $row['createdtime'];
-        $datacontrollo = date('d');
+
         $id = $row[];
         if($datacontrollo != $datapagamento){
           $sql = "UPDATE azienda SET sponsorizza=sponsorizza-1 WHERE id=?";
@@ -411,14 +412,6 @@
           $stmt->execute();
         }
       }
-
-
-
-
-
-
-
-
 
       $sql = "SELECT * FROM azienda ORDER BY sponsorizzata DESC LIMIT $val, 10";
 
