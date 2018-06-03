@@ -106,7 +106,7 @@
   <script src="js/materialize.min.js"></script>
   <script src="js/main.js"></script>
 
-  <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+  <script src="js/checkout.min.js"></script>
 
   <script>
       paypal.Button.render({
