@@ -19,7 +19,7 @@
     $db = $_SESSION['db'];
   }
 
-  echo Encryption::encrypt($_GET['email']);
+  echo $db->getHash($_GET['email'])['hash'] . "<br>";
   if(isset($_GET['email']) && !empty($_GET['email']) && isset($_GET['hash']) && !empty($_GET['hash'])){
       echo Encryption::encrypt($_GET['email']) . " " . $_GET['hash'] == $db->getHash($_GET['email'])['hash'];
       if($db->checkEmail(Encryption::encrypt($_GET['email'])) != false){
