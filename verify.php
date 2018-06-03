@@ -1,7 +1,11 @@
 <?php
+  ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
   include('res/database.php');
   include('res/sec.php');
   session_start();
+  echo Encryption::encrypt($_GET['email']) . " " . $_GET['hash'] == $db->getHash($_GET['email'])['hash'];
   if(!isset($_SESSION['db'])){
     $connessione = explode(",", file_get_contents('res/linfo.txt'));
     $servername = $connessione[0];
@@ -15,7 +19,6 @@
   }else{
     $db = $_SESSION['db'];
   }
-
 
   echo Encryption::encrypt($_GET['email']) . " " . $_GET['hash'] == $db->getHash($_GET['email'])['hash'];
   if(isset($_GET['email']) && !empty($_GET['email']) && isset($_GET['hash']) && !empty($_GET['hash'])){
