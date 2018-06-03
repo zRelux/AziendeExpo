@@ -17,7 +17,7 @@
 
     Ciao!
     Per modificare la tua password clicca qui!
-    http://mostralatuazienda.epizy.com/newPassword.php?email=' . $to . '&hash=' . $hash . '
+    https://aziendeexpo.it/newPassword.php?email=' . $to . '&hash=' . $hash . '
 
     ';
 
