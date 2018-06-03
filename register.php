@@ -20,7 +20,7 @@
 
       $errorReg = "Email già registrata";
 
-    }else if($_POST['regpass'] === $_POST['reregpass'] && strlen($_POST['regpass']) > 7){
+    }else if($_POST['regpass'] === $_POST['reregpass'] && strlen($_POST['regpass']) >= 8){
 
       $_SESSION['user'] = $email;
       $_SESSION['password'] = $pass;
@@ -37,7 +37,7 @@
       Thanks for signing up!
       Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
       Please click this link to activate your account:
-      http://mostralatuazienda.epizy.com/verify.php?email=' . $to . '&hash=' . $hash . '
+      https://aziendeexpo.it/verify.php?email=' . $to . '&hash=' . $hash . '
 
       ';
 
@@ -50,9 +50,9 @@
 
       $errorReg =  "Le password non sono uguali";
 
-    }else if(strlen($_POST['regpass']) < 7){
+    }else if(strlen($_POST['regpass']) < 8){
 
-      $errorReg = "La password è meno di 7 caratteri";
+      $errorReg = "La password è meno di 8 caratteri";
 
     }
   }
