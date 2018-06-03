@@ -19,11 +19,11 @@
     $db = $_SESSION['db'];
   }
 
-  echo $db->getHash($_GET['email'])['hash'] . "<br>";
+  echo $db->getHash(Encryption::encrypt($_GET['email']))['hash'] . "<br>";
   if(isset($_GET['email']) && !empty($_GET['email']) && isset($_GET['hash']) && !empty($_GET['hash'])){
-      echo Encryption::encrypt($_GET['email']) . " " . $_GET['hash'] == $db->getHash($_GET['email'])['hash'];
+      echo Encryption::encrypt($_GET['email']) . " " . $_GET['hash'] == $db->getHash(Encryption::encrypt($_GET['email']))['hash'];
       if($db->checkEmail(Encryption::encrypt($_GET['email'])) != false){
-        if($_GET['hash'] == $db->getHash($_GET['email'])['hash']){
+        if($_GET['hash'] == $db->getHash(Encryption::encrypt($_GET['email']))['hash']){
           $db->addAzienda(Encryption::encrypt($_GET['email']));
           $_SESSION['active'] = 1;
           $db->setActive(Encryption::encrypt($_GET['email']));
