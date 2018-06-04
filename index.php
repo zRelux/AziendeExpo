@@ -255,8 +255,8 @@
         <div class="row">
           <div id="options" class="col s12 m12 l3 hide-on-med-and-down">
             <ul class="collection">
-              <a href="?recenti=true" class="collection-item center-align center">Più recenti</a>
-              <a href="?trending=true" class="collection-item center-align center">Tendenza</a>
+              <a href="?recenti=true" title="Visualizza le aziende registrate di recente" class="collection-item center-align center">Più recenti</a>
+              <a href="?trending=true" title="Visualizza le aziende più viste" class="collection-item center-align center">Tendenza</a>
               <?php loadTipiaziende(); ?>
             </ul>
           </div>
