@@ -115,14 +115,14 @@
   function loadTipiaziende(){
     $tipiaziende = explode(";", file_get_contents('res/tipi.txt'));
     foreach ($tipiaziende as $tipo) {
-      echo '<a class="collection-item tipo center-align center" href="?tipo=' . $tipo . '">' . $tipo .'</a>';
+      echo '<a class="collection-item tipo center-align center" title="Visualizza tutte le aziende categorizzate come ' . $tipo . '"href="?tipo=' . $tipo . '">' . $tipo .'</a>';
     }
   }
 
   function loadTipoDropdown(){
     $tipiaziende = explode(";", file_get_contents('res/tipi.txt'));
     foreach ($tipiaziende as $tipo) {
-      echo '<li><a class="collection-item tipo center-align center" href="?tipo=' . $tipo . '">' . $tipo .'</a></li>';
+      echo '<li><a class="collection-item tipo center-align center" title="Visualizza tutte le aziende categorizzate come ' . $tipo . '" href="?tipo=' . $tipo . '">' . $tipo .'</a></li>';
     }
   }
 
