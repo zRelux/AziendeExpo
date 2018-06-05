@@ -330,13 +330,6 @@
       </div>
     </footer>
 
-    <?php if(!isset($_COOKIE['policy']))  echo "<script> M.toast({html: 'Ricorda di modificare le info relative all azienda<button class='btn-flat toast-action'>tick</button>'}, completeCallback: function(){
-          var data = {
-            policy: true,
-          };
-          var post = $.post('res/cookie.php', data);
-
-          }})
-    </script>"; ?>
+    <?php echo "<script> M.toast({html: 'Visualizzando questo sito accetti all'utilizzo dei cookie<button class='btn-flat toast-action'>tick</button>'}, 4000)   </script>"; ?>
   </body>
   </html>
