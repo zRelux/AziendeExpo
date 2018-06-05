@@ -332,12 +332,7 @@
 
     <?php
       if(!isset($_COOKIE['data']))
-        echo "<script> M.toast({html: 'Visualizzando questo sito accetti all'utilizzo dei cookie'}, completeCallback: function(){
-                  var data = {
-                    cookie: true,
-                  };
-                  $.post('res/cookie.php', data);
-                }, 4000)
+        echo "<script> M.toast({html: 'Visualizzando questo sito accetti all'utilizzo dei cookie'},  4000);
               </script>";
     ?>
   </body>
