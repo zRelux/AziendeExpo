@@ -191,9 +191,9 @@ $(document).ready(function() {
 });*/
 
 
-$(document).on('click', '#toast-container .toast', function() {
+/*$(document).on('click', '#toast-container .toast', function() {
   $(this).remove();
-});
+});*/
 
 function readURL(input) {
   var ext = input.files[0]['name'].substring(input.files[0]['name'].lastIndexOf('.') + 1).toLowerCase();
