@@ -1,5 +1,5 @@
 <?php
-  if(!isset($_COOKIE['cookie'])){
-      setcookie('cookie', true, time() + (60*60*24*30));
+  if(!isset($_COOKIE['data'])){
+      setcookie('data', true, time() + (60*60*24*30));
   }
 ?>

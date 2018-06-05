@@ -300,16 +300,7 @@
     <script src="js/materialize.min.js"></script>
     <script src="js/main.js"></script>
 
-    <?php
-      if(!isset($_COOKIE['cookie']))
-        echo "<script> M.toast({html: 'Visualizzando questo sito accetti all'utilizzo dei cookie'}, completeCallback: function(){
-                  var data = {
-                    cookie: true,
-                  };
-                  $.post('res/cookie.php', data);
-                }, 4000)
-              </script>";
-    ?>
+
 
 
     <footer class="page-footer blue lighten-1">
@@ -338,5 +329,16 @@
         </div>
       </div>
     </footer>
+
+    <?php
+      if(!isset($_COOKIE['data']))
+        echo "<script> M.toast({html: 'Visualizzando questo sito accetti all'utilizzo dei cookie'}, completeCallback: function(){
+                  var data = {
+                    cookie: true,
+                  };
+                  $.post('res/cookie.php', data);
+                }, 4000)
+              </script>";
+    ?>
   </body>
   </html>
