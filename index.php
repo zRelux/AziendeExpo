@@ -329,7 +329,5 @@
         </div>
       </div>
     </footer>
-
-    <?php echo "<script> M.toast({html: 'Visualizzando questo sito accetti all'utilizzo dei cookie<button class='btn-flat toast-action'>tick</button>'}, 4000)   </script>"; ?>
   </body>
   </html>
