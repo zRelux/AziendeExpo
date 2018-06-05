@@ -329,5 +329,12 @@
         </div>
       </div>
     </footer>
+    <script type="text/javascript">
+      //Inizializzazione data picker per selezionare data in richiesta preventivo con jQuery.
+      $(document).ready(function(){
+                var toastHTML = '<span>Visitando questo sito accetti l\'utilizzo dei cookie.</span><br><button class="btn-flat toast-action"><i class="large material-icons">check</i></button>';
+                M.toast({html: toastHTML});
+      });
+    </script>
   </body>
   </html>
