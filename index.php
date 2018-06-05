@@ -330,7 +330,7 @@
       </div>
     </footer>
 
-    <?php echo "<script> M.toast({html: 'Ricorda di modificare le info relative all azienda<button class='btn-flat toast-action'>tick</button>'}, completeCallback: function(){
+    <?php if(!isset($_COOKIE['cookie']))  echo "<script> M.toast({html: 'Ricorda di modificare le info relative all azienda<button class='btn-flat toast-action'>tick</button>'}, completeCallback: function(){
           var data = {
             cookie: true,
           };
