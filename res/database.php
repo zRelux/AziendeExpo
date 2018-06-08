@@ -3,20 +3,20 @@
 
     private $servername = "";
     private $database   = "";
-    private $username   = "";
+    private $user   = "";
     private $password   = "";
 
     /*
       INIZIO
       FUNZIONI PER LA CONNESSIONE AL DB
     */
-    function connect($servername, $database, $username, $password){
+    function connect($servername, $database, $user, $password){
       // Create connection
       $this->servername = $servername;
       $this->database = $database;
-      $this->username = $username;
+      $this->username = $user;
       $this->password = $password;
-      $conn = new mysqli($servername, $username, $password, $database);
+      $conn = new mysqli($servername, $user, $password, $database);
 
       // Check connection
       if ($conn->connect_error) {
@@ -27,11 +27,11 @@
     }
 
 
-    function setLogInfo($servername, $database, $username, $password){
+    function setLogInfo($servername, $database, $user, $password){
       // Create set variable for connection
       $this->servername = $servername;
       $this->database = $database;
-      $this->username = $username;
+      $this->username = $user;
       $this->password = $password;
     }
     /*
@@ -127,6 +127,7 @@
     function addAzienda($email){
         $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
 
+        $email = $conn->real_escape_string($email);
         $sql = "SELECT id FROM users WHERE username=?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $email);
@@ -216,11 +217,13 @@
       return $result->fetch_assoc();
     }
 
-    
+
 
     function changePassword($email, $password){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
 
+      $email = $conn->real_escape_string($email);
+      $pass = $conn->real_escape_string($pass);
       $sql = "UPDATE users SET password=? WHERE username=?";
       $stmt = $conn->prepare($sql);
       $stmt->bind_param("ss", $password, $email);
@@ -255,6 +258,7 @@
 
     function findByName($nome){
       $nome = str_replace("%20"," ",$nome);
+      $nome = $conn->real_escape_string($nome);
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
       $sql = "SELECT * FROM azienda WHERE id=?";
       $stmt = $conn->prepare($sql);
@@ -266,10 +270,12 @@
       return $row;
     }
 
-    function findByUser($username){
+    function findByUser($user){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
-      $row = $this->getId($username);
 
+      $user = $conn->real_escape_string($user);
+
+      $row = $this->getId($user);
       $sql = "SELECT * FROM azienda WHERE id=?";
       $stmt = $conn->prepare($sql);
       $stmt->bind_param("s", $row['id']);
@@ -283,6 +289,9 @@
     function getId($user){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
 
+
+      $user = $conn->real_escape_string($user);
+
       $sql = "SELECT id FROM users
                 WHERE username = ?";
 
@@ -295,9 +304,12 @@
       return $row;
     }
 
-    function update($elements, $username){
+    function update($elements, $user){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
-      $row = $this->getId($username);
+
+
+      $user = $conn->real_escape_string($user);
+      $row = $this->getId($user);
 
       $sql = "UPDATE azienda SET ragione=?, campo_1=?, nome_campo_1=?, campo_2=?, nome_campo_2=?, campo_3=?, nome_campo_3=?, info=?, sede=?, nata=? WHERE id = ?";
       $stmt = $conn->prepare($sql);
@@ -310,6 +322,7 @@
     function find($user){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
 
+      $user = $conn->real_escape_string($user);
       $sql = "SELECT * FROM azienda JOIN users
                 ON azienda.id = users.id
              WHERE username = ?";
@@ -323,10 +336,12 @@
       return $row;
     }
 
-    function newPost($elements, $username){
+    function newPost($elements, $user){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
-      $row = $this->getId($username);
 
+      $user = $conn->real_escape_string($user);
+
+      $row = $this->getId($user);
       $sql = "INSERT INTO `post`(`descrizione`, `nome_progetto`, `link`, `data`, `posted`, `postimage`, `id_azienda`) VALUES (?,?,?,?,?,?,?)";
       $stmt = $conn->prepare($sql);
       $p = 1;
@@ -340,6 +355,7 @@
     function loadCards($id){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
 
+      $id = $conn->real_escape_string($id);
       $sql = "SELECT post.* FROM post JOIN azienda
                 ON azienda.id = post.id_azienda
              WHERE azienda.id = ?";
@@ -355,6 +371,7 @@
     function loadCardsById($ragione){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
 
+      $ragione = $conn->real_escape_string($ragione);
       $sql = "SELECT post.* FROM post JOIN azienda
                 ON azienda.id = post.id_azienda
              WHERE azienda.id = ?";
@@ -370,6 +387,8 @@
     function profile($nome, $id){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
 
+      $id = $conn->real_escape_string($id);
+      $nome = $conn->real_escape_string($nome);
       $sql = "SELECT * FROM azienda JOIN users
                 ON azienda.id = users.id
              WHERE username = ?";
@@ -475,8 +494,11 @@
 
     function nAziende($tipo){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
+
       $tipo = str_replace("%20"," ",$tipo);
+      $tipo = $conn->real_escape_string($tipo);
       $campo = implode("", explode("data", $tipo, 2));
+
       if($tipo == "no"){
         $sql = "SELECT COUNT(id) AS N FROM azienda";
       }else if (strpos($tipo, 'data') === false) {
@@ -499,9 +521,14 @@
 
 
 
-    function uploadImage($username, $urlfile, $tipo){
+    function uploadImage($user, $urlfile, $tipo){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
-      $row = $this->getId($username);
+
+
+      $user = $conn->real_escape_string($user);
+      $tipo = $conn->real_escape_string($tipo);
+
+      $row = $this->getId($user);
 
       $sql = "UPDATE azienda SET " . $tipo . "=? WHERE id=?";
       $stmt = $conn->prepare($sql);
@@ -511,9 +538,10 @@
       $conn->close();
     }
 
-    function getOldImage($username){
+    function getOldImage($user){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
-      $row = $this->getId($username);
+      $user = $conn->real_escape_string($user);
+      $row = $this->getId($user);
       $sql = "SELECT * FROM azienda WHERE id=?";
       $stmt = $conn->prepare($sql);
       $stmt->bind_param("i", $row['id']);
@@ -527,6 +555,7 @@
 
     function getPostImage($id){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
+      $id = $conn->real_escape_string($id);
       $sql = "SELECT * FROM post WHERE id=?";
       $stmt = $conn->prepare($sql);
       $stmt->bind_param("i", $id);
@@ -540,6 +569,7 @@
 
     function deletePost($id){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
+      $id = $conn->real_escape_string($id);
       $sql = "DELETE FROM post WHERE post.id=?";
       $stmt = $conn->prepare($sql);
       $stmt->bind_param("i", $id);
@@ -550,7 +580,7 @@
 
     function addVisual($id){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
-
+      $id = $conn->real_escape_string($id);
       $sql = "UPDATE `statistica` SET `visualizzazioni`=`visualizzazioni` + 1 WHERE `id_azienda`=? AND `settimana`=?";
       $stmt = $conn->prepare($sql);
       $data = date("W/Y");
@@ -567,13 +597,14 @@
       }
     }
 
-    function loadStats($username){
+    function loadStats($user){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
 
+      $user = $conn->real_escape_string($user);
       $sql = "SELECT statistica.* FROM statistica, azienda, users WHERE azienda.id = statistica.id_azienda AND azienda.id = users.id AND users.username=?";
 
       $stmt = $conn->prepare($sql);
-      $stmt->bind_param("s", $username);
+      $stmt->bind_param("s", $user);
       $stmt->execute();
       $result = $stmt->get_result();
       $conn->close();
@@ -582,8 +613,12 @@
     }
 
     function tipoAziende($tipo, $val){
-      $tipo = str_replace("%20", " ", $tipo);
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
+
+
+      $tipo = str_replace("%20", " ", $tipo);
+      $tipo = $conn->real_escape_string($tipo);
+
 
       $sql = "SELECT azienda.* FROM azienda WHERE tipoazienda=? ORDER BY sponsorizzata DESC LIMIT $val, 10";
 
@@ -597,8 +632,11 @@
     }
 
     function cercaAziende($data, $val){
-      $tipo = str_replace("%20", " ", $tipo);
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
+      
+      $tipo = str_replace("%20", " ", $tipo);
+      $tipo = $conn->real_escape_string($tipo);
+
       $data = $conn->real_escape_string($data);
       $sql = "SELECT azienda.* FROM azienda WHERE ragione LIKE '%" . $data . "%' ORDER BY sponsorizzata DESC LIMIT $val, 10";
 
@@ -610,9 +648,9 @@
       return $result;
     }
 
-    function aggiornaInfo($campi, $username){
+    function aggiornaInfo($campi, $user){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
-      $row = $this->getId($username);
+      $row = $this->getId($user);
       //mysql_real_escape_string
       $semaphore = false;
       $query = "UPDATE azienda SET ";
@@ -642,9 +680,10 @@
       $conn->close();
     }
 
-    function updatePayment($username){
+    function updatePayment($user){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
-      $row = $this->getId($username);
+      $user = $conn->real_escape_string($user);
+      $row = $this->getId($user);
 
       $sql = "INSERT INTO payments (compratore, prezzo, stato, itemid, createdtime, datapagamento) VALUES (?,?,?,?,?,?)";
       $stmt = $conn->prepare($sql);
@@ -659,9 +698,10 @@
       $conn->close();
     }
 
-    function sponsorizza($username){
+    function sponsorizza($user){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
-      $row = $this->getId($username);
+      $user = $conn->real_escape_string($user);
+      $row = $this->getId($user);
 
       $sql = "UPDATE azienda SET sponsorizzata=? WHERE id=?";
       $stmt = $conn->prepare($sql);
