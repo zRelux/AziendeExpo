@@ -293,7 +293,7 @@
           </div>
         </div>
       </div>
-    </main>
+    </main>  
 
     <!--  Scripts-->
 
