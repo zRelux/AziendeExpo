@@ -315,7 +315,14 @@
           </div>
           <div class="col l4 s12">
             <h5 class="white-text">Social</h5>
-            <a href="https://facebook.com/aziende.expo" target="_blank"><img src="https://png.icons8.com/material/50/000000/facebook.png"></a>
+            <a href="https://facebook.com/aziende.expo" target="_blank">
+              <?xml version="1.0" encoding="UTF-8"?>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" version="1.1" width="24px" height="24px">
+              <g id="surface1">
+              <path style=" " d="M 20 2 L 4 2 C 2.898438 2 2 2.898438 2 4 L 2 20 C 2 21.101563 2.898438 22 4 22 L 20 22 C 21.101563 22 22 21.101563 22 20 L 22 4 C 22 2.898438 21.101563 2 20 2 Z M 18.398438 7.398438 L 17 7.398438 C 16.101563 7.398438 16 7.699219 16 8.398438 L 16 9.699219 L 18.101563 9.699219 L 18 12 L 16.101563 12 L 16.101563 19 L 12.898438 19 L 12.898438 12 L 11.699219 12 L 11.699219 9.601563 L 12.898438 9.601563 L 12.898438 8.101563 C 12.898438 6.101563 13.699219 5 16 5 L 18.398438 5 Z "/>
+              </g>
+              </svg>
+            </a>
             <a href="https://twitter.com/aziendeexpo" target="_blank"><img src="https://png.icons8.com/metro/50/000000/twitter.png"></a>
             <a href="https://instagram.com/aziendeexpo" target="_blank"><img src="https://png.icons8.com/ios-glyphs/50/000000/instagram-new.png"></a>
           </div>
