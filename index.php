@@ -11,10 +11,8 @@
     $username   = $connessione[2];
     $password   = $connessione[3];
     $db = new Database();
-    echo $servername . "--" . $database . "--" .  $username . "--" .  $password;
     $db->setLogInfo($servername, $database, $username, $password);
     $_SESSION['db'] = $db;
-
   }else{
     $db = $_SESSION['db'];
   }

@@ -257,9 +257,9 @@
     }
 
     function findByName($nome){
+      $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
       $nome = str_replace("%20"," ",$nome);
       $nome = $conn->real_escape_string($nome);
-      $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
       $sql = "SELECT * FROM azienda WHERE id=?";
       $stmt = $conn->prepare($sql);
       $stmt->bind_param("s", $nome);
@@ -633,7 +633,7 @@
 
     function cercaAziende($data, $val){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
-      
+
       $tipo = str_replace("%20", " ", $tipo);
       $tipo = $conn->real_escape_string($tipo);
 
