@@ -108,7 +108,7 @@
             echo '</div>';
           }
       }else{
-        echo '<div class="row principale">';
+        echo '<div class="row principale center">';
           echo "<p>Nessun risultato<p>";
         echo '</div>';
       }
