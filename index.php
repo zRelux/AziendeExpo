@@ -304,8 +304,6 @@
     <script src="js/materialize.min.js"></script>
     <script src="js/main.js"></script>
 
-
-
     <footer class="page-footer blue lighten-1">
       <div class="container">
         <div class="row center">
@@ -355,7 +353,7 @@
     </footer>
 
     <?php
-    if(!isset($_COOKIE['policy']))
+    if(!isset($_COOKIE['policy'])){
       echo '<script>
       var toastHTML = "<span>Visitando questo sito accetti l\'utilizzo dei cookie.</span><br><button class=\'btn-flat toast-action\'><i class=\'large material-icons\'>check</i></button>";
       M.toast({html: toastHTML, completeCallback: function(){
@@ -365,7 +363,8 @@
         $.post("res/cookie.php", data);
       }});
       </script>';
-     ?>
+    }
+    ?>
 
   </body>
   </html>
