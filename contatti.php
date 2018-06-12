@@ -7,7 +7,7 @@
   <meta name="msapplication-tap-highlight" content="no">
   <meta name="robots" content="index,follow" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Visualizza tutte le aziende italiane e i loro prodotti, non esitare a contattare!" />
+  <meta name="description" content="Team allo sviluppo di aziendeexpo!" />
   <meta name="copyright" content="Diritti riservati ad Aziendeexpo.it" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="keywords" content="aziende italiane, aziende expo, aziende online, mostra la tua azienda online, mostra la tua azienda, prodotti aziende, visualizza aziende italiane, aziende italiane mostra, mostra di aziende italiane">
