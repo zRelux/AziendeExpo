@@ -305,7 +305,7 @@
     <script src="js/main.js"></script>
     <script>
         var toastHTML = '<span>Visitando questo sito accetti l\'utilizzo dei cookie.</span><br><button class="btn-flat toast-action"><i class="large material-icons">check</i></button>';
-        M.toast({html: toastHTML});
+        M.toast({html: toastHTML, completeCallback: function(){alert('Your toast was dismissed')}})});
     </script>
 
 
