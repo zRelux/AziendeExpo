@@ -377,9 +377,7 @@
 
 
     var user = getCookie("policy");
-    if (user != "") {
-        alert("Welcome again " + user);
-    } else {
+    if (user == "") {
         var toastHTML = "<span>Visitando questo sito accetti l\'utilizzo dei cookie.</span><br><button class=\'btn-flat toast-action\'><i class=\'large material-icons\'>check</i></button>";
         M.toast({html: toastHTML});
         setCookie("policy", 1, 365);
