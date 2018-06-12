@@ -303,17 +303,18 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/main.js"></script>
+
     <?php
     if(!isset($_COOKIE['policy']))
-    echo "<script>
-          var toastHTML = '<span>Visitando questo sito accetti l'utilizzo dei cookie.</span><br><button class='btn-flat toast-action'><i class='large material-icons'>check</i></button>';
+    echo '<script>
+          var toastHTML = "<span>Visitando questo sito accetti l\'utilizzo dei cookie.</span><br><button class="btn-flat toast-action"><i class="large material-icons">check</i></button>";
           M.toast({html: toastHTML, completeCallback: function(){
             var data = {
               dati: 1,
             };
-            $.post('res/cookie.php', data);
+            $.post("res/cookie.php", data);
           }});
-    </script>";
+    </script>';
     ?>
 
 
