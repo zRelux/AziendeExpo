@@ -304,7 +304,23 @@
     <script src="js/materialize.min.js"></script>
     <script src="js/main.js"></script>
     <script type="text/javascript">
-    if (document.cookie.indexOf("policy=") < 0) {
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    var policy = getCookie("policy");
+    if (policy == "") {
       var toastHTML = "<span>Visitando questo sito accetti l\'utilizzo dei cookie.</span><br><button class='btn-flat toast-action'><i class='large material-icons'>check</i></button>";
       M.toast({html: toastHTML, completeCallback: function(){
         var data = {
