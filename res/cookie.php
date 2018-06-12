@@ -1,5 +1,6 @@
 <?php
-  if(!isset($_COOKIE['policy'])){
-      setcookie('policy', true, time() + (60*60*24*30));
-  }
+  if(isset($_POST['dati']))
+    if(!isset($_COOKIE['policy'])){
+        setcookie('policy', true, time() + (60*60*24*30));
+    }
 ?>
