@@ -353,7 +353,7 @@
     </footer>
 
     <?php
-    if(!isset($_COOKIE['policy'])){
+    if(!isset($_COOKIE['policy']) && empty($_COOKIE['policy'])){
       echo '<script>
       var toastHTML = "<span>Visitando questo sito accetti l\'utilizzo dei cookie.</span><br><button class=\'btn-flat toast-action\'><i class=\'large material-icons\'>check</i></button>";
       M.toast({html: toastHTML, completeCallback: function(){
