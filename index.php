@@ -311,9 +311,7 @@
             var data = {
               dati: 1,
             };
-            if (flag == true) {
-              $.post('res/cookie.php', data);
-            }
+            $.post('res/cookie.php', data);
           }});
     </script>";
     ?>
