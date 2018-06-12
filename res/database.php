@@ -634,9 +634,6 @@
     function cercaAziende($data, $val){
       $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
 
-      $tipo = str_replace("%20", " ", $tipo);
-      $tipo = $conn->real_escape_string($tipo);
-
       $data = $conn->real_escape_string($data);
       $sql = "SELECT azienda.* FROM azienda WHERE ragione LIKE '%" . $data . "%' ORDER BY sponsorizzata DESC LIMIT $val, 10";
 
