@@ -181,6 +181,7 @@
             </ul>';
     }
   }
+
 ?>
 
 
@@ -351,21 +352,39 @@
         </div>
       </div>
     </footer>
-
-    <?php
-    if(!isset($_COOKIE['policy']) && empty($_COOKIE['policy'])){
-      echo "ciaoooooo";
-      echo '<script>
-      var toastHTML = "<span>Visitando questo sito accetti l\'utilizzo dei cookie.</span><br><button class=\'btn-flat toast-action\'><i class=\'large material-icons\'>check</i></button>";
-      M.toast({html: toastHTML, completeCallback: function(){
-        var data = {
-          dati: 1,
-        };
-        $.post("res/cookie.php", data);
-      }});
-      </script>';
+    <script type="text/javascript">
+    function setCookie(cname, cvalue, exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+      var expires = "expires="+d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     }
-    ?>
+
+    function getCookie(cname) {
+      var name = cname + "=";
+      var ca = document.cookie.split(';');
+      for(var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+          }
+      }
+      return "";
+    }
+
+
+    var user = getCookie("policy");
+    if (user != "") {
+        alert("Welcome again " + user);
+    } else {
+        var toastHTML = "<span>Visitando questo sito accetti l\'utilizzo dei cookie.</span><br><button class=\'btn-flat toast-action\'><i class=\'large material-icons\'>check</i></button>";
+        M.toast({html: toastHTML});
+        setCookie("policy", 1, 365);
+    }
+    </script>
 
   </body>
   </html>
