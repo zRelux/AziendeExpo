@@ -109,7 +109,7 @@
           }
       }else{
         echo '<div class="row principale center">';
-          echo "<p>Nessun risultato<p>";
+          echo "<p class='flow-text'>Nessun risultato<p>";
         echo '</div>';
       }
 
