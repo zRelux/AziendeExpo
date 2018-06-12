@@ -306,7 +306,7 @@
     <script>
       $('document').ready(function(){
         var toastHTML = '<span>Visitando questo sito accetti l\'utilizzo dei cookie.</span><br><button class="btn-flat toast-action"><i class="large material-icons">check</i></button>';
-        M.toast({html: toastHTML, completeCallback: function(){console.log('Your toast was dismissed')}})});
+        M.toast({html: toastHTML, completeCallback: function(){console.log('Your toast was dismissed')}}));
       });
     </script>
 
