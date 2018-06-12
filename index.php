@@ -304,7 +304,7 @@
     <script src="js/materialize.min.js"></script>
     <script src="js/main.js"></script>
     <script>
-          var toastHTML = "<span>Visitando questo sito accetti l\'utilizzo dei cookie.</span><br><button class="btn-flat toast-action"><i class="large material-icons">check</i></button>";
+          var toastHTML = "<span>Visitando questo sito accetti l\'utilizzo dei cookie.</span><br><button class='btn-flat toast-action'><i class='large material-icons'>check</i></button>";
           M.toast({html: toastHTML, completeCallback: function(){
             var data = {
               dati: 1,
