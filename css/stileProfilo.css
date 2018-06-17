@@ -7,8 +7,6 @@ body {
  main {
    flex: 1 0 auto;
  }
-     
-
 
 nav ul a, nav .brand-logo, .sidenav-trigger{
   color: #444;
@@ -102,6 +100,9 @@ nav .nav-wrapper {
   border-radius: 50%;
 }
 
+.immagineme{
+  transform: rotate(90deg);
+}
 
 .background-image {
   object-fit: cover;

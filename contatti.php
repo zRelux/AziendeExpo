@@ -75,7 +75,7 @@
 
           </div>
           <div class="col s12 l3">
-            <img src="images/download.JPG" alt="developer image" class="circle responsive-img">
+            <img src="images/download.JPG" alt="developer image" class="circle responsive-img immagineme">
             <!-- notice the "circle" class -->
           </div>
           <div class="col s12 l5">
