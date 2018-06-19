@@ -126,7 +126,7 @@
 
     function addAzienda($email){
         $conn = $this->connect($this->servername, $this->database, $this->username, $this->password);
-
+        echo $email;
         $email = $conn->real_escape_string($email);
         $sql = "SELECT id FROM users WHERE username=?";
         $stmt = $conn->prepare($sql);
