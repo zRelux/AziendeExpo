@@ -24,6 +24,7 @@
       echo Encryption::encrypt($_GET['email']) . " " . $_GET['hash'] == $db->getHash(Encryption::encrypt($_GET['email']))['hash'];
       if($db->checkEmail(Encryption::encrypt($_GET['email'])) != false){
         if($_GET['hash'] == $db->getHash(Encryption::encrypt($_GET['email']))['hash']){
+          echo Encryption::encrypt($_GET['email']);
           $db->addAzienda(Encryption::encrypt($_GET['email']));
           $_SESSION['active'] = 1;
           $db->setActive(Encryption::encrypt($_GET['email']));
