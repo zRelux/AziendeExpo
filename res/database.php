@@ -157,7 +157,7 @@
         $sede = "Lucca/IT";
         $nata = "12/10/1999";
 		    $sponsorizzata = 0;
-
+        echo "<br>"$id;
         $stmt->bind_param("ssssssssissssssssii", $nome, $campo1, $nome_campo1, $campo2, $nome_campo2, $campo3, $nome_campo3, $card_info, $telefono, $email, $info, $sitoweb, $sede, $nata, $immagine, $immagine, $tipo, $sponsorizzata, $id);
         if ($stmt->execute() === TRUE) {
           $conn->close();
